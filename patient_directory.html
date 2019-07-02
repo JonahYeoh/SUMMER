@@ -1,0 +1,189 @@
+<html>
+<head>
+<style type="text/css">
+	table {
+		width:100%;
+	}
+	th, td, tr {
+		height:40px;
+		border: 1px solid black;
+	}
+	th {
+		background-color:#DCDCDC;
+	}
+	div {
+		width: 100%;
+		resize: both;
+		overflow: auto;
+	}
+</style> 
+    <script type="text/javascript" charset="UTF-8"></script>
+    <script src="Cookie.js"></script>
+    <script src="HTTP2019.js"></script>
+    <script src="FHIR_patient.js"></script>
+    <script src="utility.js"></script>
+    <script src="verification.js"></script>
+    <script>
+        var fam = "patientFamily";
+        var giv = "patientGiven";
+
+        function postVerification(ret, option) {
+            var text = JSON.parse(ret);
+            var id = text.id;
+            if (option == "patient")
+                setCookie("patientId", id, 1);
+            else if (option == "practitioner")
+                setCookie("practitionerId", id, 1);
+            else if (option == "practitionerRole")
+                    ;
+
+        }
+
+        function getVerification(ret, option) {
+            var text = JSON.parse(ret);
+            alert("text.total = " + text.total);
+            alert("text.id = " + text.id);
+            if (text.total == 0) {
+                alert("Operation Failed");
+            }
+            else if (text.total == 1) {
+                var id = text.entry[0].resource.id;
+                alert("successed" + id);
+                if (option == "practitioner")
+                    setCookie("practitionerId", id, 1);
+                else if (option == "patient")
+                    setCookie("patientId", id, 1);
+                alert("Success Operation");
+            }
+            alert("Done");
+        }
+
+    </script>
+</head>
+<body onload="fillCookie(fam, giv);">
+	<div>
+		<table>
+			<tr>
+				<th colspan="4">
+					<b>Patient Registration</b>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					Client Name
+				</td>
+				<td>
+					Title: 
+					<select id="title_main">
+						<option id="title0_main" name="title" value="mr">Mr.</option>
+						<option id="title1_main" name="title" value="mrs">Mrs.</option>
+						<option id="title2_main" name="title" value="miss">Miss.</option>
+					</select>
+				<td>
+					First Name: <input type="text" id="name1_main" name="fname" />
+				</td>
+				<td>
+					Last Name: 	<input type="text" id="name2_main" name="lname" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					ID: 
+				</td>
+				<td>
+					Citizen Identity Number: <input type="text" id="c_id_main" name="c_identity_main" />
+				</td>
+				<td>
+					Welfare Identity Number: <input type="text" id="w_id_main" name="w_identity_main" />
+				</td>
+				<td>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Date of Birth:
+				</td>
+				<td>
+					Year <input type="number" id="yyyy_main" name="dob" min="1900" max="2019"/>
+				</td>
+				<td>
+					Month <input type="number" id="mm_main" name="dob" min="1" max="12"/>
+				</td>
+				<td>
+					Date <input type="number" id="dd_main" name="dob" min="1" max="31"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Gender: 
+				</td>
+				<td>
+					<select id="sex_main">
+						<option id="male_main" name="gender" value="male">Male</option>
+						<option id="female_main" name="gender" value="female">Female</option>
+						<option id="unknown_main" name="gender" value="unknown">Unknown</option>
+					</select>
+				</td>
+				<td>
+					Mariatal Status: 
+				</td>
+				<td>
+					<select id="marital_main">
+						<option id="married_main" name="marital" value="M">Married</option>
+						<option id="polygamous_main" name="marital" value="P">Polygamous</option>
+						<option id="single_main" name="marital" value="S">Single</option>
+						<option id="divorced_main" name="marital" value="D">Divorced</option>
+						<option id="unk_mar_main" name="marital" value="UNK">Unknown</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Contacts
+				</td>
+				<td>
+					Contact Point:
+					<select id="tel_use_main">
+						<option id="contact_use0_main" name="telecom" value="home">Home:</option>
+						<option id="contact_use1_main" name="telecom" value="work">Work:</option>
+						<option id="contact_use2_main" name="telecom" value="temp">Temp:</option>
+						<option id="contact_use3_main" name="telecom" value="old">Old:</option>
+						<option id="contact_use4_main" name="telecom" value="mobile">Mobile:</option>
+					</select>
+				</td>
+				<td>
+					Contact Type:
+					<select id="tel_system_main">
+						<option id="contact_system0_main" name="telecom" value="phone">Phone:</option>
+						<option id="contact_system1_main" name="telecom" value="fax">Fax:</option>
+						<option id="contact_system2_main" name="telecom" value="email">Email:</option>
+					</select>
+				</td>
+				<td>
+					Contact Number / E-Mail: <input type="text" id="telecom" name="telecom" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Address: 
+				</td>
+				<td>
+					Line 1: <input type="text" id="add_line_main" name="address" />
+				</td>
+				<td>
+					Postal Code: <input type="text" id="add_postal_main" name="address" />
+				</td>
+				<td>
+					City: <input type="text" id="add_city_main" name="address" />
+					Country: <input type="text" id="add_country_main" name="address" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" colspan="4">
+					<button type="button" id="button0" onclick="patientPost();" value="Post">Button</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

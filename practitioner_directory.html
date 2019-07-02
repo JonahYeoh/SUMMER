@@ -1,0 +1,301 @@
+<html>
+<head>
+<style type="text/css">
+	table {
+		width:100%;
+	}
+	th, td, tr {
+		height:40px;
+		border: 1px solid black;
+	}
+	th {
+		background-color:#DCDCDC;
+	}
+	#encounter_class, #encounter_reason {
+        width:500px;
+	}
+	div {
+		width: 100%;
+		resize: both;
+		overflow: auto;
+	}
+</style> 
+<script type="text/javascript" charset="UTF-8"></script>
+<script src="HTTP2019.js"></script>
+<script src="Cookie.js"></script>
+<script src="utility.js"></script>
+<script src="FHIR_practitionerRole.js"></script>
+<script>
+    var fam = "practitionerFamily";
+    var giv = "practitionerGiven";
+
+	function qeury() {
+	    var urL = "http://hapi.fhir.org/baseDstu3/Practitioner?given:exact=";
+	    var given = document.getElementById("name1_main").value;
+	    var family = document.getElementById("name2_main").value;
+
+	    urL = urL + given + "&&family=" + family;
+	    getData(urL, "practitioner");
+	    for (i = 0; i < 1000; i++)
+	        i += 1;
+	    
+	}
+
+</script>
+</head>
+<body onload="fillCookie(fam, giv);">
+	<div>
+		<table>
+			<tr>
+				<th colspan="3">
+					<b>Practitioner Registration</b>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					Client Name
+				</td>
+				<td colspan="2">
+					Title: 
+					<select id="title_main">
+						<option id="title0_main" name="title" value="mr">Mr.</option>
+						<option id="title1_main" name="title" value="mrs">Mrs.</option>
+						<option id="title2_main" name="title" value="miss">Miss.</option>
+					</select>
+				&nbsp;
+					First Name: <input type="text" id="name1_main" name="fname" />
+				&nbsp;
+					Last Name: 	<input type="text" id="name2_main" name="lname" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Qualification: 
+				</td>
+                <td colspan="2">
+                    Since: <input type="number" id="q_since_main" name="qualification_since_main" min="1900" max="2019" value="2000"/>
+                &nbsp;
+                    University: <input type="text" id="uni_main" name="university_main" />
+                &nbsp;
+					Highest Educational Level: 
+                    <select id="q_level_main">
+                        <option id='qualificationAA' name='qualification' value='AA'>Associate of Arts</option>
+                        <option id='qualificationAAS' name='qualification' value='AAS'>Associate of Applied Science</option>
+                        <option id='qualificationABA' name='qualification' value='ABA'>Associate of Business Administration</option>
+                        <option id='qualificationAE' name='qualification' value='AE'>Associate of Engineering</option>
+                        <option id='qualificationAS' name='qualification' value='AS'>Associate of Science</option>
+                        <option id='qualificationBA' name='qualification' value='BA'>Bachelor of Arts</option>
+                        <option id='qualificationBBA' name='qualification' value='BBA'>Bachelor of Business Administration</option>
+                        <option id='qualificationBE' name='qualification' value='BE'>Bachelor or Engineering</option>
+                        <option id='qualificationBFA' name='qualification' value='BFA'>Bachelor of Fine Arts</option>
+                        <option id='qualificationBN' name='qualification' value='BN'>Bachelor of Nursing</option>
+                        <option id='qualificationBS' name='qualification' value='BS'>Bachelor of Science</option>
+                        <option id='qualificationBSL' name='qualification' value='BSL'>Bachelor of Science - Law</option>
+                        <option id='qualificationBSN' name='qualification' value='BSN'>Bachelor on Science - Nursing</option>
+                        <option id='qualificationBT' name='qualification' value='BT'>Bachelor of Theology</option>
+                        <option id='qualificationCANP' name='qualification' value='CANP'>Certified Adult Nurse Practitioner</option>
+                        <option id='qualificationCER' name='qualification' value='CER'>Certificate</option>
+                        <option id='qualificationCMA' name='qualification' value='CMA'>Certified Medical Assistant</option>
+                        <option id='qualificationCNM' name='qualification' value='CNM'>Certified Nurse Midwife</option>
+                        <option id='qualificationCNP' name='qualification' value='CNP'>Certified Nurse Practitioner</option>
+                        <option id='qualificationCNS' name='qualification' value='CNS'>Certified Nurse Specialist</option>
+                        <option id='qualificationCPNP' name='qualification' value='CPNP'>Certified Pediatric Nurse Practitioner</option>
+                        <option id='qualificationCRN' name='qualification' value='CRN'>Certified Registered Nurse</option>
+                        <option id='qualificationCTR' name='qualification' value='CTR'>Certified Tumor Registrar</option>
+                        <option id='qualificationDBA' name='qualification' value='DBA'>Doctor of Business Administration</option>
+                        <option id='qualificationDED' name='qualification' value='DED'>Doctor of Education</option>
+                        <option id='qualificationDIP' name='qualification' value='DIP'>Diploma</option>
+                        <option id='qualificationDO' name='qualification' value='DO'>Doctor of Osteopathy</option>
+                        <option id='qualificationEMT' name='qualification' value='EMT'>Emergency Medical Technician</option>
+                        <option id='qualificationEMTP' name='qualification' value='EMTP'>Emergency Medical Technician - Paramedic</option>
+                        <option id='qualificationFPNP' name='qualification' value='FPNP'>Family Practice Nurse Practitioner</option>
+                        <option id='qualificationHS' name='qualification' value='HS'>High School Graduate</option>
+                        <option id='qualificationJD' name='qualification' value='JD'>Juris Doctor</option>
+                        <option id='qualificationMA' name='qualification' value='MA'>Master of Arts</option>
+                        <option id='qualificationMBA' name='qualification' value='MBA'>Master of Business Administration</option>
+                        <option id='qualificationMCE' name='qualification' value='MCE'>Master of Civil Engineering</option>
+                        <option id='qualificationMD' name='qualification' value='MD'>Doctor of Medicine</option>
+                        <option id='qualificationMDA' name='qualification' value='MDA'>Medical Assistant</option>
+                        <option id='qualificationMDI' name='qualification' value='MDI'>Master of Divinity</option>
+                        <option id='qualificationME' name='qualification' value='ME'>Master of Engineering</option>
+                        <option id='qualificationMED' name='qualification' value='MED'>Master of Education</option>
+                        <option id='qualificationMEE' name='qualification' value='MEE'>Master of Electrical Engineering</option>
+                        <option id='qualificationMFA' name='qualification' value='MFA'>Master of Fine Arts</option>
+                        <option id='qualificationMME' name='qualification' value='MME'>Master of Mechanical Engineering</option>
+                        <option id='qualificationMS' name='qualification' value='MS'>Master of Science</option>
+                        <option id='qualificationMSL' name='qualification' value='MSL'>Master of Science - Law</option>
+                        <option id='qualificationMSN' name='qualification' value='MSN'>Master of Science - Nursing</option>
+                        <option id='qualificationMT' name='qualification' value='MT'>Medical Technician</option>
+                        <option id='qualificationMTH' name='qualification' value='MTH'>Master of Theology</option>
+                        <option id='qualificationNG' name='qualification' value='NG'>Non-Graduate</option>
+                        <option id='qualificationNP' name='qualification' value='NP'>Nurse Practitioner</option>
+                        <option id='qualificationPA' name='qualification' value='PA'>Physician Assistant</option>
+                        <option id='qualificationPHD' name='qualification' value='PHD'>Doctor of Philosophy</option>
+                        <option id='qualificationPHE' name='qualification' value='PHE'>Doctor of Engineering</option>
+                        <option id='qualificationPHS' name='qualification' value='PHS'>Doctor of Science</option>
+                        <option id='qualificationPN' name='qualification' value='PN'>Advanced Practice Nurse</option>
+                        <option id='qualificationPharmD' name='qualification' value='PharmD'>Doctor of Pharmacy</option>
+                        <option id='qualificationRMA' name='qualification' value='RMA'>Registered Medical Assistant</option>
+                        <option id='qualificationRN' name='qualification' value='RN'>Registered Nurse</option>
+                        <option id='qualificationRPH' name='qualification' value='RPH'>Registered Pharmacist</option>
+                        <option id='qualificationSEC' name='qualification' value='SEC'>Secretarial Certificate</option>
+                        <option id='qualificationTS' name='qualification' value='TS'>Trade School Graduate</option>
+
+                    </select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Date of Birth:
+                </td>
+                <td colspan="2">
+                &nbsp;
+					Year <input type="number" id="yyyy_main" name="dob" min="1900" max="2019" value="2019"/>
+                &nbsp;
+					Month
+                    <select id="mm_main">
+                        <option id="month_default" name="month" value="00">----</option>
+                        <option id="month1" name="month" value="1">January</option>
+                        <option id="month2" name="month" value="2">February</option>
+                        <option id="month3" name="month" value="3">March</option>
+                        <option id="month4" name="month" value="4">April</option>
+                        <option id="month5" name="month" value="5">May</option>
+                        <option id="month6" name="month" value="6">June</option>
+                        <option id="month7" name="month" value="7">July</option>
+                        <option id="month8" name="month" value="8">August</option>
+                        <option id="month9" name="month" value="9">September</option>
+                        <option id="month10" name="month" value="10">October</option>
+                        <option id="month11" name="month" value="11">November</option>
+                        <option id="month12" name="month" value="12">December</option>
+                    </select>
+                &nbsp;
+					Date
+                    <select id="dd_main" name="date">
+                        <option id="date_default" name="date_main" value="00">----</option>
+                        <option id='date_main1' name='date_main' value='1'>1</option>
+                        <option id='date_main2' name='date_main' value='2'>2</option>
+                        <option id='date_main3' name='date_main' value='3'>3</option>
+                        <option id='date_main4' name='date_main' value='4'>4</option>
+                        <option id='date_main5' name='date_main' value='5'>5</option>
+                        <option id='date_main6' name='date_main' value='6'>6</option>
+                        <option id='date_main7' name='date_main' value='7'>7</option>
+                        <option id='date_main8' name='date_main' value='8'>8</option>
+                        <option id='date_main9' name='date_main' value='9'>9</option>
+                        <option id='date_main10' name='date_main' value='10'>10</option>
+                        <option id='date_main11' name='date_main' value='11'>11</option>
+                        <option id='date_main12' name='date_main' value='12'>12</option>
+                        <option id='date_main13' name='date_main' value='13'>13</option>
+                        <option id='date_main14' name='date_main' value='14'>14</option>
+                        <option id='date_main15' name='date_main' value='15'>15</option>
+                        <option id='date_main16' name='date_main' value='16'>16</option>
+                        <option id='date_main17' name='date_main' value='17'>17</option>
+                        <option id='date_main18' name='date_main' value='18'>18</option>
+                        <option id='date_main19' name='date_main' value='19'>19</option>
+                        <option id='date_main20' name='date_main' value='20'>20</option>
+                        <option id='date_main21' name='date_main' value='21'>21</option>
+                        <option id='date_main22' name='date_main' value='22'>22</option>
+                        <option id='date_main23' name='date_main' value='23'>23</option>
+                        <option id='date_main24' name='date_main' value='24'>24</option>
+                        <option id='date_main25' name='date_main' value='25'>25</option>
+                        <option id='date_main26' name='date_main' value='26'>26</option>
+                        <option id='date_main27' name='date_main' value='27'>27</option>
+                        <option id='date_main28' name='date_main' value='28'>28</option>
+                        <option id='date_main29' name='date_main' value='29'>29</option>
+                        <option id='date_main30' name='date_main' value='30'>30</option>
+                        <option id='date_main31' name='date_main' value='31'>31</option>
+                    </select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Gender: 
+				</td>
+				<td colspan="2">
+					<select id="sex_main">
+						<option id="male_main" name="gender" value="male">Male</option>
+						<option id="female_main" name="gender" value="female">Female</option>
+						<option id="unknown_main" name="gender" value="unknown">Unknown</option>
+					</select>
+				</td>
+            </tr>
+            <tr>
+				<td>
+					Mariatal Status: 
+				</td>
+				<td colspan="2">
+					<select id="marital_main">
+						<option id="married_main" name="marital" value="M">Married</option>
+						<option id="polygamous_main" name="marital" value="P">Polygamous</option>
+						<option id="single_main" name="marital" value="S">Single</option>
+						<option id="divorced_main" name="marital" value="D">Divorced</option>
+						<option id="unk_mar_main" name="marital" value="UNK">Unknown</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Contacts
+				</td>
+				<td>
+					Contact Point:
+					<select id="tel_use_main">
+						<option id="contact_use0_main" name="telecom" value="home">Home:</option>
+						<option id="contact_use1_main" name="telecom" value="work">Work:</option>
+						<option id="contact_use2_main" name="telecom" value="temp">Temp:</option>
+						<option id="contact_use3_main" name="telecom" value="old">Old:</option>
+						<option id="contact_use4_main" name="telecom" value="mobile">Mobile:</option>
+					</select>
+                &nbsp;
+					Contact Type:
+					<select id="tel_system_main">
+						<option id="contact_system0_main" name="telecom" value="phone">Phone:</option>
+						<option id="contact_system1_main" name="telecom" value="fax">Fax:</option>
+						<option id="contact_system2_main" name="telecom" value="email">Email:</option>
+					</select>
+                &nbsp;
+					Contact Number / E-Mail: <input type="text" id="telecom" name="telecom" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Address: 
+                </td>
+                <td>
+                &nbsp;
+					Line 1: <input type="text" id="add_line_main" name="address" />
+                &nbsp;
+					Postal Code: <input type="text" id="add_postal_main" name="address" />
+                &nbsp;
+					City: <input type="text" id="add_city_main" name="address" />
+					Country: <input type="text" id="add_country_main" name="address" />
+				</td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2">
+					<button type="button" id="button0" onclick="parse();" value="practitioner">Submit Practitioner Data</button>
+				</td>
+			</tr>
+            <tr>
+                <td>
+                    Practitioner Role:
+                </td>
+                <td colspan="2">
+                    <select id="practitionerRole_main">
+                        <option id='practitionerroledoctor' name='practitionerrole' value='doctor'>Doctor</option>
+                        <option id='practitionerrolenurse' name='practitionerrole' value='nurse'>Nurse</option>
+                        <option id='practitionerrolepharmacist' name='practitionerrole' value='pharmacist'>Pharmacist</option>
+                        <option id='practitionerroleresearcher' name='practitionerrole' value='researcher'>Researcher</option>
+                        <option id='practitionerroleteacher' name='practitionerrole' value='teacher'>Teacher/educator</option>
+                        <option id='practitionerroleict' name='practitionerrole' value='ict'>ICT professional</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="3">
+                    <button type="button" id="button1" onclick="qeury();" value="practitionerRole">Submit Practitioner Role</button>
+                </td>    
+            </tr>
+		</table>
+	</div>
+</body>
+</html>

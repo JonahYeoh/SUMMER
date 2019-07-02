@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>startUp</title>
+    <script type="text/javascript" charset="UTF-8"></script>
+    <style type="text/css">
+		.body {
+		    width: 1366px;
+		    height: 768px;
+		    margin: 10px 10px 10px 10px; 
+		    border: 1px solid black;
+            top: 50px;
+		}
+    </style>
+    <script src="loginHTTP.js"></script>
+    <script src="Cookie.js"></script>
+    <script src="loginVerification.js"></script>
+    <script src="dateTime.js"></script>
+    <script>
+
+		function qeury() {
+		    // alert("pass()");
+		    var urL = "http://hapi.fhir.org/baseDstu3/";
+		    var option = document.getElementById("class").value;
+		    var given = document.getElementById("giv").value;
+		    var family = document.getElementById("fam").value;
+		    if (option == "Patient") {
+		        urL = urL + option + "?organization=1945183&&given:exact=";
+		        setCookie("patientGiven", given, 1);
+		        setCookie("patientFamily", family, 1);
+		    }
+		    else if ( option == "Practitioner" ) {
+		        urL = urL + option + "?given:exact=";
+		        setCookie("practitionerGiven", given, 1);
+		        setCookie("practitionerFamily", family, 1);
+		    }
+			urL = urL + given + "&&family=" + family;
+			getData(urL, option);
+		}
+
+    </script>
+</head>
+<body onload="startTime()">
+    <center>
+        <table align="center" border="1" cellspacing="1" cellpadding="2">
+            <tr>
+               <td align="center" colspan="2">
+                    <b>網頁登入</b>
+               </td>
+            </tr>
+            <tr align="center">
+               <td>
+                    類別:
+                    <select id="class">
+                        <option id="class0" name="class">Patient</option>
+                        <option id="class1" name="class">Practitioner</option>
+                        </select>
+               </td>
+               <td colspan="2">
+                    <br />名字:
+                    <input type="text" name="patientName" value="---" id="giv" />  <br />
+                    <br />姓氏:
+                    <input type="text" name="patientName" value="---" id="fam" />  <br /><br />
+               </td>
+            </tr>
+        </table>
+        <p id="dateTime"></p>
+        <p><button type="button" id="button0" onclick="qeury();">Submit</button></p>
+    </center>
+</body>
+</html>
