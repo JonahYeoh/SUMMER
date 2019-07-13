@@ -35,12 +35,40 @@
 	    var family = document.getElementById("name2_main").value;
 
 	    urL = urL + given + "&&family=" + family;
-	    getData(urL, "practitioner");
-	    for (i = 0; i < 1000; i++)
-	        i += 1;
-	    
+	    getData(urL, "practitioner");	    
 	}
+	function bypass(){
+        practitionerRole();	
+	}
+	function postVerification(ret, option) {
+            var text = JSON.parse(ret);
+            var id = text.id;
+            if (option == "patient")
+                setCookie("patientId", id, 1);
+            else if (option == "practitioner")
+                setCookie("practitionerId", id, 1);
+            else if (option == "practitionerRole")
+                    ;
 
+    }
+	function getVerification(ret, option) {
+            var text = JSON.parse(ret);
+            alert("text.total = " + text.total);
+            alert("text.id = " + text.id);
+            if (text.total == 0) {
+                alert("Operation Failed");
+            }
+            else if (text.total == 1) {
+                var id = text.entry[0].resource.id;
+                alert("successed" + id);
+                if (option == "practitioner")
+                    setCookie("practitionerId", id, 1);
+                else if (option == "patient")
+                    setCookie("patientId", id, 1);
+                alert("Success Operation");
+            }
+            alert("Done");
+    }
 </script>
 </head>
 <body onload="fillCookie(fam, giv);">
@@ -272,7 +300,7 @@
 			</tr>
 			<tr>
 				<td align="center" colspan="2">
-					<button type="button" id="button0" onclick="parse();" value="practitioner">Submit Practitioner Data</button>
+					<button type="button" id="button0" onclick="practitionerPost();" value="practitioner">Submit Practitioner Data</button>
 				</td>
 			</tr>
             <tr>

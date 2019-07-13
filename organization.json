@@ -1,0 +1,28 @@
+{
+  "resourceType": "Organization",
+  "name": "Renal Care",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+886 7777777",
+      "use": "mobile"
+    }
+	,
+    {
+      "system": "email",
+      "value": "107316154@gms.tcu.edu.tw",
+      "use": "work"
+    }
+	,
+    {
+      "system": "email",
+      "value": "107316000@gms.tcu.edu.tw",
+      "use": "work"
+    }
+	]
+	,
+	"partof": {
+       "reference": "Organization/1945183"
+    }
+}
+
