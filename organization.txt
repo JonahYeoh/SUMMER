@@ -1,0 +1,47 @@
+text = {
+	"resourceType":"Organization",
+	"name": "Healthcare For Christ",
+	"telecom": [
+		{
+		  "system": "phone",
+		  "value": "+886 7777777",
+		  "use": "mobile"
+		},
+		{
+		  "system": "email",
+		  "value": "107316154@gms.tcu.edu.tw",
+		  "use": "work"
+		},
+		{
+		  "system": "email",
+		  "value": "107316000@gms.tcu.edu.tw",
+		  "use": "work"
+		}
+	]
+}
+
+  "resourceType": "Organization",
+  "id": "1983906",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2019-07-16T02:41:08.962+00:00"
+  },
+  "name": "Healthcare For Christ",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+886 7777777",
+      "use": "mobile"
+    },
+    {
+      "system": "email",
+      "value": "107316154@gms.tcu.edu.tw",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "107316000@gms.tcu.edu.tw",
+      "use": "work"
+    }
+  ]
+}

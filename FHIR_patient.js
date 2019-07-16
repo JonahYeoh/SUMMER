@@ -19,6 +19,36 @@
                 "assigner": {
                     "display": "Health Care for Christ"
                 }
+            },
+			{
+                "use": "official",
+                "type": {
+                    "coding": [
+                      {
+                          "system": "https://www.ris.gov.tw/app/en/3051"
+                      }
+                    ]
+                },
+                "assigner": {
+                    "display": "Department Of Household Registration"
+                },
+				"system":"https://www.ris.gov.tw/app/en/3051",
+				"value":"AX9001234"
+            },
+			{
+                "use": "official",
+                "type": {
+                    "coding": [
+                      {
+                          "system": "https://www.mohw.gov.tw/mp-2.html"
+                      }
+                    ]
+                },
+                "assigner": {
+                    "display": "Ministry Of Health Taiwan"
+                },
+				"system":"https://www.mohw.gov.tw/mp-2.html",
+				"value":"1234"
             }
         ],
         "active": "true",
@@ -28,7 +58,10 @@
                 "given": [
                     "Peter"
                 ]
-            }
+            },
+			{
+				"text":"約翰"
+			}
         ],
         "telecom": [
             {
@@ -54,7 +87,7 @@
             }
         ],
         "managingOrganization": {
-            "reference": "Organization/1945183"
+			"reference": "Organization/1945183"
         }
     }
 
