@@ -2,43 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title></title>
+	<link rel="stylesheet" type="text/css" href="styleMain.css">
+    <title>Main Page</title>
     <script type="text/javascript" charset="UTF-8"></script>
-    <style type="text/css">
-        body {
-            position: fixed;
-		}
-        .container {
-            width: 1366px;
-            height: 768px;
-            margin: 10px 10px 10px 10px;
-            max-width: 1366px;
-            max-height: 768px;
-            min-width: 1000px;
-            resize: both;
-            overflow: auto;
-        }
-        .nav {
-            top: 20px;
-            margin-left: 0;
-            border: 1px solid black;
-            width: 200px;
-            height: 750px;
-            float:left;
-        }
-        .second {
-            top:20px;
-            height:750px;
-        }
-        .main {
-            float:right;
-            width:1000px;
-            height:700px;
-            border: 1px solid black;
-            max-width:1000px;
-            max-height:700px;
-        }
-    </style>
     <script src="Cookie.js"></script>
     <script>
         function acc() {
@@ -48,50 +14,26 @@
 		// trial
     </script>
 </head>
-<body onload="acc()">
-    <center>
+<body>
         <div class="container">
+			<div class="vgap">
+				主頁
+			</div>
             <div class="nav">
-                <TABLE class="nav_tb" style="font-size: 16px;">
-                    <tr>
-                        <td>
-                            <h1>您的賬號：</h1>
-                            <p id="accFHIR"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2 align="center">目錄</h2>
-                            <ul id="selected">
-                                <big>Private</big>
-                                <li><a href="patient.htm" target="iframe_a">Patient Directory</a></li>
-                                <li><a href="practitioner_directory.html" target="iframe_a">Practitioner Directory</a></li>
-                                <li><a href="encounter.html" target="iframe_a">Encounter</a></li>
-                            </ul>
-
-                            <ul>
-                                <big>Public</big>
-                                <li><a href="http://www.tzuchi.org.my/fundraising/en/%E6%B4%97%E8%85%8E%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8A%9F%E8%83%BD/" target="iframe_a">About Us</a></li>
-                            </ul>
-                        </td>
-                    </tr>
-                </TABLE>
+				<div class="vgap">
+					<p id="accFHIR"></p>
+				</div>
+                <h3 align="center">目錄</h3>
+                        <big>Private</big><br />
+                        <a href="patient.htm" target="iframe_a">Patient Directory</a><br />
+                        <a href="practitioner_directory.html" target="iframe_a">Practitioner Directory</a>
+                        <a href="encounter.html" target="iframe_a">Encounter</a><br />
+                        <big>Public</big><br />
+                        <a href="http://www.tzuchi.org.my/fundraising/en/%E6%B4%97%E8%85%8E%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8A%9F%E8%83%BD/" target="iframe_a">About Us</a>
             </div>
-            <div class="second">
-                <table>
-                    <tr>
-                        <td align="center" style="background-color:#DCDCDC;">主頁</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="main">
-                                <iframe id="iframeA" src="http://www.tzuchi.org.my/fundraising/en/%E6%B4%97%E8%85%8E%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8A%9F%E8%83%BD/" name="iframe_a" style="width:100%; height: 100%;"></iframe>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+            <div class="main">
+                <iframe id="iframeA" src="http://www.tzuchi.org.my/fundraising/en/%E6%B4%97%E8%85%8E%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8A%9F%E8%83%BD/" name="iframe_a"></iframe>
             </div>
         </div>
-    </center>
 </body>
 </html>

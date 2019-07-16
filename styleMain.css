@@ -1,0 +1,39 @@
+body{
+			width: 1366px;
+			height: 768px;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:0;
+			margin-bottom:0;
+		}
+		.container{
+			margin: 0;
+			padding:0;
+		}
+		.vgap{
+			height:30px;
+			width:100%;
+			text-align:center;
+			text-decoration:underline;
+			background-color:#FDA7DF;
+		}
+		.nav,.main{
+			height:720px;
+		}
+		.nav{
+			width:200px;
+			padding: 20px;
+			text-align:left;
+			text-decoration:none;
+			font-size:16px;
+			background-color:#12CBC4;
+			float:left;
+		}
+		.main{
+			width: 1106px;
+			float:right;
+		}
+		#iframeA{
+			width:100%;
+			height:100%;
+		}
