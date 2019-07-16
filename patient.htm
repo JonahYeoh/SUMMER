@@ -1,0 +1,174 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title> New Patient Registration Portal </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="utility.js"></script>
+</head>
+	<body onload="loadArray('monthDOB'),loadArray('dayDOB');">
+	<div class="container">
+		<div class="vgap">
+			<h1 id="header1">New Patient Registration Portal</h1>
+		</div>
+		<div class="vgap"></div>
+		<div class="bottom">
+			<form>
+				<table>
+					<div class="vgap">
+						<h2>Basic Identity</h2>
+					</div>
+					<tr>
+						<td class="column0">Title:</td>
+						<td class="hgap"></td>
+						<td class="column2">
+							<select id="title">
+								<option id="title0" name="title" value="mr">Mr.</option>
+								<option id="title1" name="title" value="mrs">Mrs.</option>
+								<option id="title2" name="title" value="miss">Miss.</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="column0">First Name:</td>
+						<td class="hgap"></td>
+						<td class="column2"><input type="text" id="given" name="username"/></td>
+					</tr>
+					<tr>
+						<td class="column0">Last Name:</td>
+						<td class="hgap"></td>
+						<td class="column2"><input type="text" id="family" name="username"/></td>
+					</tr>
+					<tr>
+						<td class="column0">中文姓名:</td>
+						<td class="hgap"></td>
+						<td class="column2"><input type="text" id="mandrinName" name="username"/></td>
+					</tr>
+					<tr>
+						<td class="column0">National Identity Number:</td>
+						<td class="hgap"></td>
+						<td class="column2"><input type="text" id="nid" name="userIdentifier"/></td>
+					</tr>
+					<tr>
+						<td class="column0">Welfare Identity Number:</td>
+						<td class="hgap"></td>
+						<td class="column2"><input type="text" id="wid" name="userIdentifier"/></td>
+					</tr>
+					<tr>
+						<td class="column0">Gender:</td>
+						<td class="hgap"></td>
+						<td class="column2">
+							<select id="gender">
+								<option id="gender0" name="usergender" value="male">Male</option>
+								<option id="gender1" name="usergender" value="female">Female</option>
+								<option id="gender2" name="usergender" value="unknown">Unknown</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="column0">Marital Status:</td>
+						<td class="hgap"></td>
+						<td class="column2">
+							<select id="marital">
+								<option id="marital0" name="usermarital" value="M">Married</option>
+								<option id="marital1" name="usermarital" value="P">Polygamous</option>
+								<option id="marital2" name="usermarital" value="S">Single</option>
+								<option id="marital3" name="usermarital" value="D">Divorced</option>
+								<option id="marital4" name="usermarital" value="UNK">Unknown</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+					<div class="vgap">
+						<h2>Date Of Birth</h2>
+					</div>
+				<table>
+					<tr>
+						<td class="column0">Year:</td>
+						<td class="hgap"></td>
+						<td class="column2"><input type="number" id="year" name="userDOB" min="1900" max="2019" placeholder="1999"/></td>
+					</tr>
+					<tr>
+						<td class="column0">Month:</td>
+						<td class="hgap"></td>
+						<td class="column2"><p id="monthDOB">loading...</p></td>
+					</tr>
+					<tr>
+						<td class="column0">Day:</td>
+						<td class="hgap"></td>
+						<td class="column2"><p id="dayDOB">loading...</p></td>
+					</tr>
+				</table>
+				<div class="vgap">
+					<h2>Contact</h2>
+				</div>
+				<table>
+<!--					
+					<tr>
+						<td class="column0">Contact Type:</td>
+						<td class="hgap"></td>
+						<td class="column2">
+							<select id="contactSystem">
+								<option id="contactSystem0" name="usercontactSystem" value="phone">Phone</option>
+								<option id="contactSystem1" name="usercontactSystem" value="fax">Fax</option>
+								<option id="contactSystem2" name="usercontactSystem" value="email">E-Mail</option>
+							</select>
+						</td>
+					</tr>
+-->					
+					<tr>
+						<td class="column0">Phone Number:</td>
+						<td class="hgap"></td>
+						<td class="column2"><input type="text" id="telecomP" name="usercontact" placeholder="+886"/>
+					</tr>
+					<tr>
+						<td class="column0">Contact Point:</td>
+						<td class="hgap"></td>
+						<td class="column2">
+							<select id="contactP">
+								<option id="contactP0" name="usercontactUse" value="home">Home</option>
+								<option id="contactP1" name="usercontactUse" value="work">Work</option>
+								<option id="contactP2" name="usercontactUse" value="temp">Temporary</option>
+								<option id="contactP3" name="usercontactUse" value="old">Old</option>
+								<option id="contactP4" name="usercontactUse" value="mobile">Mobile</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="column0">E-Mail:</td>
+						<td class="hgap"></td>
+						<td class="column2"><input type="text" id="telecomE" name="usercontact" placeholder="@gmail.com"/>
+					</tr>
+					<tr>
+						<td class="column0">Contact Point:</td>
+						<td class="hgap"></td>
+						<td class="column2">
+							<select id="contactE">
+								<option id="contactE0" name="usercontactUse" value="home">Home</option>
+								<option id="contactE1" name="usercontactUse" value="work">Work</option>
+								<option id="contactE2" name="usercontactUse" value="temp">Temporary</option>
+								<option id="contactE3" name="usercontactUse" value="old">Old</option>
+								<option id="contactE4" name="usercontactUse" value="mobile">Mobile</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+				<div class="vgap">
+					<h2>Address</h2>
+				</div>
+				<table>
+					<tr>
+						<td><input type="text" id="addLine" name="userAddress" placeholder="line1" /></td>
+						<td><input type="text" id="addPostal" name="userAddress" placeholder="postal code" /></td>
+						<td><input type="text" id="addCity" name="userAddress" placeholder="city" /></td>
+						<td><input text="text" id="addCountry" name="userAddress" placeholder="country" /></td>
+					</tr>
+				</table>
+				<div class="vgap">
+					<h2>Congratulation! You are almost done! Click the 'Submit' button and you are free to go!</h2>
+					<button type="button" onclick="patientPost();">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	</body>
+</html>

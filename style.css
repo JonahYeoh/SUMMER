@@ -1,0 +1,50 @@
+		body{
+			width:1366;
+			height:768;
+			margin-left:auto;
+			margin-right:auto;
+			background: url(https://wallpaperplay.com/walls/full/1/5/7/101658.jpg);
+			background-repeat:no-repeat;
+			background-position:center;
+			background-size:cover;
+			align:center;
+		}
+		.container{
+			top:50%;
+			left:50%;
+		}
+		.top{
+			top:50%;
+			left:50%;
+			text-align:center;
+			border: 2px solid black;
+		}
+		.vgap{
+			height:50px;
+			text-align:center;
+			text-decoration:underline;
+			<!--border: 1px solid black;-->
+		}
+		.bottom{
+			top:50%;
+			left:50%;
+			padding: 10px;
+			border: 2px solid black;
+		}
+		table{
+			margin-left:auto;
+			margin-right:auto;
+		}
+		.column0{
+			width: 300px;
+			height: 20px;
+			text-align:right;
+		}
+		.hgap{
+			width: 10%;
+			height: 20px;
+		}
+		.column2{
+			width: 50%;
+			height: 20px;
+		}
