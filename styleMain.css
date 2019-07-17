@@ -4,8 +4,6 @@
 		}
 		body{
 			display:block;
-			max-width:100%;
-			max-height:auto;
 			min-width: 1024px;
 			min-height: 576px;
 			margin-left:auto;
