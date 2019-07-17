@@ -11,29 +11,31 @@
             var str = "Practitioner ID:";
             document.getElementById("accFHIR").innerHTML = str + getCookie("practitionerId");
         }
-		// trial
+		function toggleSidebar(){
+			document.getElementById("sidebar").classList.toggle('active');
+		}
     </script>
 </head>
 <body>
-        <div class="container">
-			<div class="vgap">
-				主頁
-			</div>
-            <div class="nav">
-				<div class="vgap">
-					<p id="accFHIR"></p>
+            <div id="sidebar">
+				<big>目錄</big>	
+				<p id="accFHIR"></p>
+				<div class="toggle-btn" onclick="toggleSidebar()">
+					<span></span>
+					<span></span>
+					<span></span>
 				</div>
-                <h3 align="center">目錄</h3>
-                        <big>Private</big><br />
-                        <a href="patient.htm" target="iframe_a">Patient Directory</a><br />
-                        <a href="practitioner_directory.html" target="iframe_a">Practitioner Directory</a>
-                        <a href="encounter.html" target="iframe_a">Encounter</a><br />
-                        <big>Public</big><br />
-                        <a href="http://www.tzuchi.org.my/fundraising/en/%E6%B4%97%E8%85%8E%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8A%9F%E8%83%BD/" target="iframe_a">About Us</a>
+				
+				<big>Private</big><br />
+				<ul>
+					<li><a href="patient.htm" target="_self">Patient Directory</a></li>
+					<li><a href="practitioner_directory.html">Practitioner Directory</a></li>
+					<li><a href="encounter.html">Encounter</a></li>
+				</ul>
+				<big>Public</big><br />
+				<ul>
+					<li><a href="http://www.tzuchi.org.my/fundraising/en/%E6%B4%97%E8%85%8E%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8A%9F%E8%83%BD/">About Us</a></li>
+				</ul>
             </div>
-            <div class="main">
-                <iframe id="iframeA" src="http://www.tzuchi.org.my/fundraising/en/%E6%B4%97%E8%85%8E%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8A%9F%E8%83%BD/" name="iframe_a"></iframe>
-            </div>
-        </div>
 </body>
 </html>

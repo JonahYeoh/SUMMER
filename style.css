@@ -1,13 +1,8 @@
 		body{
-			width:600px;
-			height:690px;
-			margin-left:auto;
-			margin-right:auto;
-			background: url(https://wallpaperplay.com/walls/full/1/5/7/101658.jpg);
+			background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8dIWYBQm31U_qoP0RhYdeeriIQacr8Z3FOl_Ny3Sacc6UL77K4w);
 			background-repeat:no-repeat;
 			background-position:center;
 			background-size:cover;
-			align:center;
 		}
 		.container{
 			top:50%;
@@ -17,9 +12,7 @@
 			height:35px;
 			text-align:center;
 			text-decoration:underline;
-		}
-		.bottom{
-			;
+			background-color: #151719;
 		}
 		table{
 			margin-left:auto;
@@ -40,5 +33,6 @@
 		}
 		#button0{
 			height: 20px;
-			background-color: #ED4C67;
+			background-color: rgba(164, 176, 190,1.0);
 		}
+		

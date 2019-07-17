@@ -1,44 +1,60 @@
-		*{
-			max-width:100%;
-			max-height:100%;
-		}
 		body{
 			display:block;
-			min-width: 1024px;
-			min-height: 576px;
+			max-height:100%;
+			max-width:100%;
+			width:100%;
+			height:100%;
 			margin-left:auto;
 			margin-right:auto;
 			margin-top:0;
 			margin-bottom:0;
 		}
-		.container{
-			margin: 0;
-			padding:0;
+		.main{
+			display:block;
+			width:100%;
+			height:100%;
 		}
 		.vgap{
 			height:30px;
 			width:100%;
 			text-align:center;
 			text-decoration:underline;
-			background-color:#FDA7DF;
+			background-color:rgba(164, 176, 190,1.0);
 		}
-		.nav,.main{
-			height:720px;
+		#sidebar{
+		  position:fixed;
+		  width:200px;
+		  height:100%;
+		  padding:3px;
+		  font-family: Arial, Helvetica, sans-serif;
+		  font-size:20px;
+		  color:white;
+		  background-color:#151719;
+		  left:-200px;
+		  transition:all 500ms linear;
 		}
-		.nav{
-			width:200px;
-			padding: 20px;
-			text-align:left;
+		#sidebar.active{
+		  left:0px;
+		}
+		#sidebar ul li{
+		  color:rgba(230,230,230,0.9);
+		  list-style:none;
+		  padding:15px 10px;
+		  border-bottom:1px solid rgba(100,100,100,0.3);
+		  list-style: none;
+		}
+		#sidebar ul li a{
 			text-decoration:none;
-			font-size:16px;
-			background-color:#12CBC4;
-			float:left;
 		}
-		.main{
-			width: 1106px;
-			float:right;
+		#sidebar .toggle-btn{
+		  position:absolute;
+		  left:230px;
+		  top:20px;
 		}
-		#iframeA{
-			width:100%;
-			height:100%;
+		#sidebar .toggle-btn span{
+		  display:block;
+		  width:30px;
+		  height:5px;
+		  background: #151719;
+		  margin:5px 0px;
 		}
