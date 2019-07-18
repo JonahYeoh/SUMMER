@@ -2,6 +2,7 @@
     var text =
     {
         "resourceType": "Patient",
+        "id":"1234567",
         "text": {
             "status": "generated"
         },
