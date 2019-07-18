@@ -29,17 +29,7 @@
     var fam = "practitionerFamily";
     var giv = "practitionerGiven";
 
-	function qeury() {
-	    var urL = "http://hapi.fhir.org/baseDstu3/Practitioner?given:exact=";
-	    var given = document.getElementById("name1_main").value;
-	    var family = document.getElementById("name2_main").value;
-
-	    urL = urL + given + "&&family=" + family;
-	    getData(urL, "practitioner");	    
-	}
-	function bypass(){
-        practitionerRole();	
-	}
+	
 	function postVerification(ret, option) {
             var text = JSON.parse(ret);
             var id = text.id;

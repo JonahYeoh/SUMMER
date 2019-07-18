@@ -18,9 +18,9 @@
           }
         ]
     }
-    id_cookie = getCookie("practitionerId");
-    text.practitioner.reference = "Practitioner/" + id_cookie;
-    text.code[0].coding[0].code = document.getElementById("practitionerRole_main").value;
+    practitionerId = document.getElementById("pid").value;
+    text.practitioner.reference = "Practitioner/" + practitionerId;
+    text.code[0].coding[0].code = document.getElementById("role").value;
     var myJSON = JSON.stringify(text);
     HTTPPostData("http://hapi.fhir.org/baseDstu3/PractitionerRole", myJSON, "practitionerRole");
 }

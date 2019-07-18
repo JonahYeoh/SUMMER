@@ -1,65 +1,72 @@
 <html>
+
 <head>
-<style type="text/css">
-	table {
-		width:100%;
-	}
-	th, td, tr {
-		height:40px;
-		border: 1px solid black;
-	}
-	th {
-		background-color:#DCDCDC;
-	}
-	div {
-		width: 100%;
-		resize: both;
-		overflow: auto;
-	}
-</style> 
-    <script type="text/javascript" charset="UTF-8"></script>
-    <script src="Cookie.js"></script>
-    <script src="HTTP2019.js"></script>
-    <script src="FHIR_patient.js"></script>
-    <script src="utility.js"></script>
-    <script src="verification.js"></script>
-    <script>
-        var fam = "patientFamily";
-        var giv = "patientGiven";
+	<style type="text/css">
+		table {
+			width: 100%;
+		}
 
-        function postVerification(ret, option) {
-            var text = JSON.parse(ret);
-            var id = text.id;
-            if (option == "patient")
-                setCookie("patientId", id, 1);
-            else if (option == "practitioner")
-                setCookie("practitionerId", id, 1);
-            else if (option == "practitionerRole")
-                    ;
+		th,
+		td,
+		tr {
+			height: 40px;
+			border: 1px solid black;
+		}
 
-        }
+		th {
+			background-color: #DCDCDC;
+		}
 
-        function getVerification(ret, option) {
-            var text = JSON.parse(ret);
-            alert("text.total = " + text.total);
-            alert("text.id = " + text.id);
-            if (text.total == 0) {
-                alert("Operation Failed");
-            }
-            else if (text.total == 1) {
-                var id = text.entry[0].resource.id;
-                alert("successed" + id);
-                if (option == "practitioner")
-                    setCookie("practitionerId", id, 1);
-                else if (option == "patient")
-                    setCookie("patientId", id, 1);
-                alert("Success Operation");
-            }
-            alert("Done");
-        }
+		div {
+			width: 100%;
+			resize: both;
+			overflow: auto;
+		}
+	</style>
+	<script type="text/javascript" charset="UTF-8"></script>
+	<script src="Cookie.js"></script>
+	<script src="HTTP2019.js"></script>
+	<script src="FHIR_patient.js"></script>
+	<script src="utility.js"></script>
+	<script src="verification.js"></script>
+	<script>
+		var fam = "patientFamily";
+		var giv = "patientGiven";
 
-    </script>
+		function postVerification(ret, option) {
+			var text = JSON.parse(ret);
+			var id = text.id;
+			if (option == "patient")
+				setCookie("patientId", id, 1);
+			else if (option == "practitioner")
+				setCookie("practitionerId", id, 1);
+			else if (option == "practitionerRole")
+				;
+
+		}
+
+		function getVerification(ret, option) {
+			var text = JSON.parse(ret);
+			alert("text.total = " + text.total);
+			alert("text.id = " + text.id);
+			if (text.total == 0) {
+				alert("Operation Failed");
+			}
+			else if (text.total == 1) {
+				var id = text.entry[0].resource.id;
+				alert("successed" + id);
+				if (option == "practitioner")
+					setCookie("practitionerId", id, 1);
+				else if (option == "patient")
+					setCookie("patientId", id, 1);
+				alert("Success Operation");
+			}
+			alert("Done");
+		}
+
+	</script>
 </head>
+
 <body onload="fillCookie(fam, giv);">
 	<div>
 		<table>
@@ -73,7 +80,7 @@
 					Client Name
 				</td>
 				<td>
-					Title: 
+					Title:
 					<select id="title_main">
 						<option id="title0_main" name="title" value="mr">Mr.</option>
 						<option id="title1_main" name="title" value="mrs">Mrs.</option>
@@ -83,12 +90,12 @@
 					First Name: <input type="text" id="name1_main" name="fname" />
 				</td>
 				<td>
-					Last Name: 	<input type="text" id="name2_main" name="lname" />
+					Last Name: <input type="text" id="name2_main" name="lname" />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					ID: 
+					ID:
 				</td>
 				<td>
 					Citizen Identity Number: <input type="text" id="c_id_main" name="c_identity_main" />
@@ -104,18 +111,18 @@
 					Date of Birth:
 				</td>
 				<td>
-					Year <input type="number" id="yyyy_main" name="dob" min="1900" max="2019"/>
+					Year <input type="number" id="yyyy_main" name="dob" min="1900" max="2019" />
 				</td>
 				<td>
-					Month <input type="number" id="mm_main" name="dob" min="1" max="12"/>
+					Month <input type="number" id="mm_main" name="dob" min="1" max="12" />
 				</td>
 				<td>
-					Date <input type="number" id="dd_main" name="dob" min="1" max="31"/>
+					Date <input type="number" id="dd_main" name="dob" min="1" max="31" />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Gender: 
+					Gender:
 				</td>
 				<td>
 					<select id="sex_main">
@@ -125,7 +132,7 @@
 					</select>
 				</td>
 				<td>
-					Mariatal Status: 
+					Mariatal Status:
 				</td>
 				<td>
 					<select id="marital_main">
@@ -165,7 +172,7 @@
 			</tr>
 			<tr>
 				<td>
-					Address: 
+					Address:
 				</td>
 				<td>
 					Line 1: <input type="text" id="add_line_main" name="address" />
@@ -186,4 +193,5 @@
 		</table>
 	</div>
 </body>
+
 </html>

@@ -1,42 +1,53 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="styleMain.css">
 	<link rel="stylesheet" type="text/css" href="styleNav.css">
-    <title>Main Page</title>
-    <script type="text/javascript" charset="UTF-8"></script>
-    <script src="Cookie.js"></script>
-    <script>
-        function acc() {
-            var str = "Practitioner ID:";
-            document.getElementById("accFHIR").innerHTML = str + getCookie("practitionerId");
-        }
-		function toggleSidebar(){
-			document.getElementById("sidebar").classList.toggle('active');
+	<title> * FHIR UP </title>
+	<script type="text/javascript" charset="UTF-8"></script>
+	<script src="Cookie.js"></script>
+	<script src="uiHandler.js"></script>
+	<script>
+		function acc() {
+			var str = "Practitioner ID:";
+			document.getElementById("accFHIR").innerHTML = str + getCookie("practitionerId");
 		}
-    </script>
+	</script>
 </head>
+
 <body>
-            <div id="sidebar">
-				<big>目錄</big>	
+	<nav>
+		<div id="sidebar">
+			<div class="toggle-btn" onclick="toggleSidebar()">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="logo">
+				<h4>NAVIGATATION</h4>
+			</div>
+			<div class="part">
+				<h5>PRIVATE</h5>
+			</div>
+			<ul>
+				<li><a href="patient.htm">+ Patient</a></li>
+				<li><a href="practitioner.htm">+ Practitioner</a></li>
+				<li><a href="practitionerRole.htm">+ Practitioner Role</a></li>
+				<li><a href="encounter.html">Encounter</a></li>
+			</ul>
+			<div class="part">
+				<h5>PUBLIC</h5>
+			</div>
+			<ul>
+				<li><a href="http://www.tzuchi.org.my/fundraising/en/%E6%B4%97%E8%85%8E%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8A%9F%E8%83%BD/">About Us</a></li>
+			</ul>
+			<div class="vgap">
 				<p id="accFHIR"></p>
-				<div class="toggle-btn" onclick="toggleSidebar()">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-				
-				<big>Private</big><br />
-				<ul>
-					<li><a href="patient.htm" target="_self">Patient Directory</a></li>
-					<li><a href="practitioner_directory.html">Practitioner Directory</a></li>
-					<li><a href="encounter.html">Encounter</a></li>
-				</ul>
-				<big>Public</big><br />
-				<ul>
-					<li><a href="http://www.tzuchi.org.my/fundraising/en/%E6%B4%97%E8%85%8E%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8A%9F%E8%83%BD/">About Us</a></li>
-				</ul>
-            </div>
+			</div>
+		</div>
+	</nav>
 </body>
+
 </html>

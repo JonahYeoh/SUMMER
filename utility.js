@@ -1,5 +1,4 @@
-﻿
-function fillCookie(fam, giv) {
+﻿function fillCookie(fam, giv) {
     document.getElementById("given").value = getCookie(giv);
     document.getElementById("family").value = getCookie(fam);
 }

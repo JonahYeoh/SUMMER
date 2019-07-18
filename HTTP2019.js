@@ -11,8 +11,8 @@ function HTTPGetData(urlStr, option) {
             ret = rawFile.responseText;
             alert("data retrieved");
 			alert(ret);
-            getVerification(ret, option);
-            if (option == "practitioner")
+            var status = getVerification(ret, option);
+            if (option == "practitionerRole" && status == 1)
 				bypass();
         }
     }
@@ -28,10 +28,8 @@ function HTTPPostData(urlStr, dataStr, option ) {
         if (rawFile.readyState === 4) {
             ret = rawFile.responseText;
             alert("One");
-			alert(ret);
-			if ( option != "practitionerRole" )
-				postVerification(ret, option);
-            
+            alert(ret);
+            postVerification(ret,option);            
         }
     }
     rawFile.send(dataStr);

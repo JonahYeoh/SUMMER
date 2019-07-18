@@ -1,0 +1,22 @@
+var text = {
+			"resource": {
+        "resourceType": "PractitionerRole",
+        "practitioner": {
+          "reference": "Practitioner/example"
+        },
+        "organization": {
+          "reference": "Organization/1942178"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/practitioner-role",
+                "code": "code",
+                "display": "code"
+              }
+            ]
+          }
+        ]
+      }
+}
