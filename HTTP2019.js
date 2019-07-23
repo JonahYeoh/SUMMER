@@ -39,4 +39,17 @@ function getData(urlStr, option) {
     HTTPGetData(urlStr, option);
 }
 
+function HTTPPutData(urlStr, dataStr, option) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("PUT", urlStr, true);
+    rawFile.setRequestHeader("Content-type", "application/json+fhir");
 
+    rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4){
+            ret = rawFile.responseText;
+            postVerification(ret,option); 
+            alert(ret);
+        }
+    }
+    rawFile.send(dataStr);
+}

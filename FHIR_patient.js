@@ -2,7 +2,7 @@
     var text =
     {
         "resourceType": "Patient",
-        "id":"1234567",
+		"id":"",
         "text": {
             "status": "generated"
         },
@@ -55,13 +55,13 @@
         "active": "true",
         "name": [
             {
-                "family": "demo",
+                "family": "emo",
                 "given": [
-                    "demo"
+                    "emo"
                 ]
             },
 			{
-				"text":"約翰"
+				"text":"js約翰"
 			}
         ],
         "telecom": [
@@ -96,7 +96,8 @@
     }
 	text.identifier[0].type.coding[0].code = document.getElementById("title").value;
 	text.identifier[1].value = document.getElementById("nid").value;
-	text.identifier[2].value = document.getElementById("wid").value;
+    text.identifier[2].value = document.getElementById("wid").value;
+    text.id = document.getElementById("nid").value;
     text.name[0].family = document.getElementById("family").value;
     text.name[0].given[0] = document.getElementById("given").value;
 	text.name[1].text = document.getElementById("mandrinName").value;
@@ -120,5 +121,7 @@
     text.address[0].text = i + ", " + j + ", " + k + ", " + l;
 
     var myJSON = JSON.stringify(text);
-    HTTPPostData("http://hapi.fhir.org/baseDstu3/Patient", myJSON, "patient");
+    var url = "http://hapi.fhir.org/baseDstu3/Patient/" + text.id;
+    //HTTPPostData("http://hapi.fhir.org/baseDstu3/Patient", myJSON, "patient");
+    HTTPPutData(url, myJSON, "patient");
 }

@@ -2,6 +2,7 @@
     var text =
     {
         "resourceType": "Practitioner",
+        "id":"",
         "text": {
             "status": "generated"
         },
@@ -113,7 +114,8 @@
     }
     text.identifier[0].type.coding[0].code = document.getElementById("title").value;
 	text.identifier[1].value = document.getElementById("nid").value;
-	text.identifier[2].value = document.getElementById("wid").value;
+    text.identifier[2].value = document.getElementById("wid").value;
+    text.id = document.getElementById("nid").value;
     text.name[0].family = document.getElementById("family").value;
     text.name[0].given[0] = document.getElementById("given").value;
 	text.name[1].text = document.getElementById("mandrinName").value;
@@ -139,5 +141,21 @@
     text.address[0].text = i + ", " + j + ", " + k + ", " + l;
 
     var myJSON = JSON.stringify(text);
-    HTTPPostData("http://hapi.fhir.org/baseDstu3/Practitioner", myJSON, "practitioner");
+    var url = "http://hapi.fhir.org/baseDstu3/Practitioner/" + text.id;
+    //HTTPPostData("http://hapi.fhir.org/baseDstu3/Patient", myJSON, "patient");
+    HTTPPutData(url, myJSON, "practitioner");
+}
+function HTTPPutData(urlStr, dataStr, option) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("PUT", urlStr, true);
+    rawFile.setRequestHeader("Content-type", "application/json+fhir");
+
+    rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4){
+            ret = rawFile.responseText;
+            postVerification(ret,option); 
+            alert(ret);
+        }
+    }
+    rawFile.send(dataStr);
 }
