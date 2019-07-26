@@ -1,0 +1,338 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title> + Patient Registration Portal </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="styleNav.css">
+	<script src="Cookie.js"></script>
+	<script src="HTTP2019.js"></script>
+	<script src="FHIR_patient.js"></script>
+	<script src="utility.js"></script>
+	<script src="uiHandler.js"></script>
+	<script>
+		var fam = "patientFamily";
+		var giv = "patientGiven";
+
+		function postVerification(ret, option) {
+			var text = JSON.parse(ret);
+			var id = text.id;
+			if (option == "patient")
+				setCookie("patientId", id, 1);
+			else if (option == "practitioner")
+				setCookie("practitionerId", id, 1);
+			else if (option == "practitionerRole")
+				;
+
+		}
+
+		function getVerification(ret, option) {
+			var text = JSON.parse(ret);
+			alert("text.total = " + text.total);
+			alert("text.id = " + text.id);
+			if (text.total == 0) {
+				alert("Operation Failed");
+			}
+			else if (text.total == 1) {
+				var id = text.entry[0].resource.id;
+				alert("successed" + id);
+				if (option == "practitioner")
+					setCookie("practitionerId", id, 1);
+				else if (option == "patient")
+					setCookie("patientId", id, 1);
+				alert("Success Operation");
+			}
+			alert("Done");
+		}
+
+	</script>
+</head>
+
+<body onload="loadArray('monthDOB'),loadArray('dayDOB'),fillCookie(fam, giv);">
+	<nav>
+		<div id="sidebar">
+			<div class="toggle-btn" onclick="toggleSidebar()">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="logo">
+				<h4>NAVIGATATION</h4>
+			</div>
+			<div class="part">
+				<h5>PRIVATE</h5>
+			</div>
+			<ul>
+				<li><a href="patient_v2.htm">+ Patient</a></li>
+				<li><a href="practitioner.htm">+ Practitioner</a></li>
+				<li><a href="practitionerRole.htm">+ Practitioner Role</a></li>
+				<li><a href="encounter.htm">Encounter</a></li>
+			</ul>
+			<div class="part">
+				<h5>PUBLIC</h5>
+			</div>
+			<ul>
+				<li><a
+						href="http://www.tzuchi.org.my/fundraising/en/%E6%B4%97%E8%85%8E%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8A%9F%E8%83%BD/">About
+						Us</a></li>
+			</ul>
+			<div class="vgap">
+				<p id="accFHIR"></p>
+			</div>
+		</div>
+	</nav>
+	<div class="content">
+		<table>
+			<tr>
+				<td>
+					<div class="vgap">
+						<h2>Basic Identity</h2>
+					</div>
+					<table>
+						<tr>
+							<td class="column0">Title:</td>
+							<td class="hgap"></td>
+							<td class="column2">
+								<select id="title">
+									<option id="title0" name="title" value="mr">Mr.</option>
+									<option id="title1" name="title" value="mrs">Mrs.</option>
+									<option id="title2" name="title" value="miss">Miss.</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="column0">First Name:</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="text" id="given" name="username" /></td>
+						</tr>
+						<tr>
+							<td class="column0">Last Name:</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="text" id="family" name="username" /></td>
+						</tr>
+						<tr>
+							<td class="column0">名字（繁體）:</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="text" id="givenTaiwan" name="username" /></td>
+						</tr>
+						<tr>
+							<td class="column0">姓氏(繁體):</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="text" id="familyTaiwan" name="username" /></td>
+						</tr>
+						<tr>
+							<td class="column0">名字（簡體）:</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="text" id="givenSimplified" name="username" /></td>
+						</tr>
+						<tr>
+							<td class="column0">姓氏（簡體）:</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="text" id="familySimplified" name="username" /></td>
+						</tr>
+						<tr>
+							<td class="column0">National Identity Number/身份證號:</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="text" id="nid" name="userIdentifier" /></td>
+						</tr>
+						<tr>
+							<td class="column0">Welfare Identity Number/健保證號:</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="text" id="wid" name="userIdentifier" /></td>
+						</tr>
+						<tr>
+							<td class="column0">Gender:</td>
+							<td class="hgap"></td>
+							<td class="column2">
+								<select id="gender">
+									<option id="gender0" name="usergender" value="male">Male</option>
+									<option id="gender1" name="usergender" value="female">Female</option>
+									<option id="gender2" name="usergender" value="unknown">Unknown</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="column0">Marital Status:</td>
+							<td class="hgap"></td>
+							<td class="column2">
+								<select id="marital">
+									<option id="marital0" name="usermarital" value="M">Married</option>
+									<option id="marital1" name="usermarital" value="P">Polygamous</option>
+									<option id="marital2" name="usermarital" value="S">Never Married</option>
+									<option id="marital3" name="usermarital" value="D">Divorced</option>
+									<option id="marital4" name="usermarital" value="L">Legally Separated</option>
+									<option id="marital5" name="usermarital" value="T">Domestic Partner</option>
+									<option id="marital6" name="usermarital" value="U">Unmararried</option>
+									<option id="marital7" name="usermarital" value="UNK">Unknown</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+					<div class="vgap">
+						<h2>Date Of Birth</h2>
+					</div>
+					<table>
+						<tr>
+							<td class="column0">Year:</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="number" id="year" name="userDOB" min="1900" max="2019"
+									placeholder="1999" /></td>
+						</tr>
+						<tr>
+							<td class="column0">Month:</td>
+							<td class="hgap"></td>
+							<td class="column2">
+								<p id="monthDOB">loading...</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="column0">Day:</td>
+							<td class="hgap"></td>
+							<td class="column2">
+								<p id="dayDOB">loading...</p>
+							</td>
+						</tr>
+					</table>
+					<div class="vgap">
+						<h2>Language/溝通語言</h2>
+					</div>
+					<table>
+						<tr>
+							<td class="column0">臺灣華語:</td>
+							<td class="hgap"></td>
+							<td class=column2">
+								<input type="radio" id="lang0y" name="userCommunication0" value="yes">Yes</input>
+								<input type="radio" id="lang0n" name="userCommunication0" value="no">No</input>
+								<hr />
+							</td>
+						</tr>
+						<tr>
+							<td class="column0">中國華語:</td>
+							<td class="hgap"></td>
+							<td class=column2">
+								<input type="radio" id="lang1y" name="userCommunication1" value="yes">Yes</input>
+								<input type="radio" id="lang1n" name="userCommunication1" value="no">No</input>
+								<hr />
+							</td>
+						</tr>
+						<tr>
+							<td class="column0">American English/美式英語:</td>
+							<td class="hgap"></td>
+							<td class=column2">
+								<input type="radio" id="lang2y" name="userCommunication2" value="yes">Yes</input>
+								<input type="radio" id="lang2n" name="userCommunication2" value="no">No</input>
+								<hr />
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<div class="vgap">
+						<h2>Personal Contact/個人聯絡方式</h2>
+					</div>
+					<table>
+						<tr>
+							<td class="column0">Mobile/手機:</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="text" id="telecom0" name="usercontact"
+									placeholder="+886" />
+						</tr>
+						<tr>
+							<td class="column0">Home/家:</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="text" id="telecom1" name="usercontact"
+									placeholder="homeline" />
+						</tr>
+						<tr>
+							<td class="column0">E-Mail/電郵:</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="text" id="telecom2" name="usercontact"
+									placeholder="@anything.com" />
+						</tr>
+					</table>
+					<div class="vgap">
+						<h2>Contact Person/聯絡人</h2>
+					</div>
+					<table>
+						<tr>
+							<td class="column0">Relationship/關係:</td>
+							<td class="hgap"></td>
+							<td class=column2">
+								<select id="contact">
+									<option id="rel0" name="contactType" value="C">Emergency Contact</option>
+									<option id="rel1" name="contactType" value="E">Employer</option>
+									<option id="rel2" name="contactType" value="F">Federal Agency</option>
+									<option id="rel3" name="contactType" value="I">Insurance Company</option>
+									<option id="rel4" name="contactType" value="N">Next-of-Kin</option>
+									<option id="rel5" name="contactType" value="S">State Agency</option>
+									<option id="rel6" name="contactType" value="U">Unknown</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="column0">First Name/名字（繁/簡/英）:</td>
+							<td class="hgap"></td>
+							<td class=column2"><input type="text" id="givenContact" name="contactPoint" /></td>
+						</tr>
+						<tr>
+							<td class="column0">Last Name/名字（繁/簡/英）:</td>
+							<td class="hgap"></td>
+							<td class="column2"><input type="text" id="familyContact" name="contactPoint" /></td>
+						</tr>
+						<tr>
+							<td class="column0">Phone Number/電話號碼:</td>
+							<td class="hgap"></td>
+							<td class=column2"><input type="text" id="telecomContact" name="contactPoint" /></td>
+						</tr>
+						<tr>
+							<td class="column0">Gender/性別:</td>
+							<td class="hgap"></td>
+							<td class="column2">
+								<select id="genderContact">
+									<option id="gender0" name="contactgender" value="male">Male</option>
+									<option id="gender1" name="contactgender" value="female">Female</option>
+									<option id="gender2" name="contactgender" value="unknown">Unknown</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+					<div class="vgap">
+						<h2>Home Address</h2>
+					</div>
+					<table id="addressBox">
+						<tr>
+							<td><input type="text" id="addLine" name="userAddress" placeholder="line1" /></td>
+							<td><input type="text" id="addPostal" name="userAddress" placeholder="postal code" /></td>
+							<td><input type="text" id="addCity" name="userAddress" placeholder="city" /></td>
+							<td><input text="text" id="addCountry" name="userAddress" placeholder="country" /></td>
+						</tr>
+					</table>
+					<div class="vgap">
+						<h2>Work Address</h2>
+					</div>
+					<table id="addressBoxW">
+						<tr>
+							<td><input type="text" id="addLineW" name="userAddress" placeholder="line1" /></td>
+							<td><input type="text" id="addPostalW" name="userAddress" placeholder="postal code" /></td>
+							<td><input type="text" id="addCityW" name="userAddress" placeholder="city" /></td>
+							<td><input text="text" id="addCountryW" name="userAddress" placeholder="country" /></td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td align="center">
+								<h3 id="hint">Congratulation! You are almost done! Click the 'Submit' button and you are
+									free to go!</h3>
+								<button type="button" id="button0" onclick="patientPost();">Submit</button>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+</body>
+
+</html>

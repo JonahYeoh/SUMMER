@@ -1,234 +1,267 @@
 <html>
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title> + Practitioner Registration Portal </title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="styleNav.css">
 	<script src="Cookie.js"></script>
-    <script src="HTTP2019.js"></script>
+	<script src="HTTP2019.js"></script>
 	<script src="FHIR_practitioner.js"></script>
 	<script src="utility.js"></script>
 	<script src="uiHandler.js"></script>
-	<script>	
-        var fam = "patientFamily";
-        var giv = "patientGiven";
-        function postVerification(ret, option) {
-            var text = JSON.parse(ret);
-            var id = text.id;
-            if (option == "patient")
-                setCookie("patientId", id, 1);
-            else if (option == "practitioner")
+	<script>
+		var fam = "patientFamily";
+		var giv = "patientGiven";
+		function postVerification(ret, option) {
+			var text = JSON.parse(ret);
+			var id = text.id;
+			if (option == "patient")
+				setCookie("patientId", id, 1);
+			else if (option == "practitioner")
 				setCookie("practitionerId", id, 1);
-			alert( "Here's your temporary ID" + id );
-        }
-    </script>
+			alert("Here's your temporary ID" + id);
+		}
+	</script>
 </head>
-	<body onload="loadArray('monthDOB'),loadArray('dayDOB'),fillCookie(fam, giv);">
-			<nav>	
-					<div id="sidebar">
-						<div class="toggle-btn" onclick="toggleSidebar()">
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-						<div class="logo">
-							<h4>NAVIGATATION</h4>
-						</div>
-						<div class="part">
-							<h5>PRIVATE</h5>
-						</div>
-							<ul>
-								<li><a href="patient.htm">+ Patient</a></li>
-								<li><a href="practitioner.htm">+ Practitioner</a></li>
-								<li><a href="practitionerRole.htm">+ Practitioner Role</a></li>
-								<li><a href="encounter.htm">Encounter</a></li>
-							</ul>
-						<div class="part">
-							<h5>PUBLIC</h5>
-						</div>
-							<ul>
-								<li><a href="http://www.tzuchi.org.my/fundraising/en/%E6%B4%97%E8%85%8E%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8A%9F%E8%83%BD/">About Us</a></li>
-							</ul>
-							<div class="vgap">
-								<p id="accFHIR"></p>
-							</div>
-					</div>
-				</nav>
-			<div class="content">
-					<div class="vgap">
-							<h2>Basic Identity</h2>
-					</div>
-				<table>
-					<tr>
-						<td class="column0">Title:</td>
-						<td class="hgap"></td>
-						<td class="column2">
-							<select id="title">
-								<option id="title0" name="title" value="mr">Mr.</option>
-								<option id="title1" name="title" value="mrs">Mrs.</option>
-								<option id="title2" name="title" value="miss">Miss.</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td class="column0">First Name:</td>
-						<td class="hgap"></td>
-						<td class="column2"><input type="text" id="given" name="username"/></td>
-					</tr>
-					<tr>
-						<td class="column0">Last Name:</td>
-						<td class="hgap"></td>
-						<td class="column2"><input type="text" id="family" name="username"/></td>
-					</tr>
-					<tr>
-						<td class="column0">中文姓名:</td>
-						<td class="hgap"></td>
-						<td class="column2"><input type="text" id="mandrinName" name="username"/></td>
-					</tr>
-					<tr>
-						<td class="column0">National Identity Number:</td>
-						<td class="hgap"></td>
-						<td class="column2"><input type="text" id="nid" name="userIdentifier"/></td>
-					</tr>
-					<tr>
-						<td class="column0">Welfare Identity Number:</td>
-						<td class="hgap"></td>
-						<td class="column2"><input type="text" id="wid" name="userIdentifier"/></td>
-					</tr>
-					<tr>
-						<td class="column0">Gender:</td>
-						<td class="hgap"></td>
-						<td class="column2">
-							<select id="gender">
-								<option id="gender0" name="usergender" value="male">Male</option>
-								<option id="gender1" name="usergender" value="female">Female</option>
-								<option id="gender2" name="usergender" value="unknown">Unknown</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td class="column0">Marital Status:</td>
-						<td class="hgap"></td>
-						<td class="column2">
-							<select id="marital">
-								<option id="marital0" name="usermarital" value="M">Married</option>
-								<option id="marital1" name="usermarital" value="P">Polygamous</option>
-								<option id="marital2" name="usermarital" value="S">Single</option>
-								<option id="marital3" name="usermarital" value="D">Divorced</option>
-								<option id="marital4" name="usermarital" value="UNK">Unknown</option>
-							</select>
-						</td>
-					</tr>
-				</table>
-				<div class="vgap">
-					<h2>Qualification</h2>
-				</div>
-				<table>
-					<tr>
-						<td class="column0">Higherst Educational Level:</td>
-						<td class="hgap"></td>
-						<td class="column2">
-							<select id="highestEducationLevel">
-									<option id='qualificationAA' name='qualification' value='AA'>Associate of Arts</option>
-									<option id='qualificationAAS' name='qualification' value='AAS'>Associate of Applied Science</option>
-									<option id='qualificationABA' name='qualification' value='ABA'>Associate of Business Administration</option>
-									<option id='qualificationAE' name='qualification' value='AE'>Associate of Engineering</option>
-									<option id='qualificationAS' name='qualification' value='AS'>Associate of Science</option>
-									<option id='qualificationBA' name='qualification' value='BA'>Bachelor of Arts</option>
-									<option id='qualificationBBA' name='qualification' value='BBA'>Bachelor of Business Administration</option>
-									<option id='qualificationBE' name='qualification' value='BE'>Bachelor or Engineering</option>
-									<option id='qualificationBFA' name='qualification' value='BFA'>Bachelor of Fine Arts</option>
-									<option id='qualificationBN' name='qualification' value='BN'>Bachelor of Nursing</option>
-									<option id='qualificationBS' name='qualification' value='BS'>Bachelor of Science</option>
-									<option id='qualificationBSL' name='qualification' value='BSL'>Bachelor of Science - Law</option>
-									<option id='qualificationBSN' name='qualification' value='BSN'>Bachelor on Science - Nursing</option>
-									<option id='qualificationBT' name='qualification' value='BT'>Bachelor of Theology</option>
-									<option id='qualificationCANP' name='qualification' value='CANP'>Certified Adult Nurse Practitioner</option>
-									<option id='qualificationCER' name='qualification' value='CER'>Certificate</option>
-									<option id='qualificationCMA' name='qualification' value='CMA'>Certified Medical Assistant</option>
-									<option id='qualificationCNM' name='qualification' value='CNM'>Certified Nurse Midwife</option>
-									<option id='qualificationCNP' name='qualification' value='CNP'>Certified Nurse Practitioner</option>
-									<option id='qualificationCNS' name='qualification' value='CNS'>Certified Nurse Specialist</option>
-									<option id='qualificationCPNP' name='qualification' value='CPNP'>Certified Pediatric Nurse Practitioner</option>
-									<option id='qualificationCRN' name='qualification' value='CRN'>Certified Registered Nurse</option>
-									<option id='qualificationCTR' name='qualification' value='CTR'>Certified Tumor Registrar</option>
-									<option id='qualificationDBA' name='qualification' value='DBA'>Doctor of Business Administration</option>
-									<option id='qualificationDED' name='qualification' value='DED'>Doctor of Education</option>
-									<option id='qualificationDIP' name='qualification' value='DIP'>Diploma</option>
-									<option id='qualificationDO' name='qualification' value='DO'>Doctor of Osteopathy</option>
-									<option id='qualificationEMT' name='qualification' value='EMT'>Emergency Medical Technician</option>
-									<option id='qualificationEMTP' name='qualification' value='EMTP'>Emergency Medical Technician - Paramedic</option>
-									<option id='qualificationFPNP' name='qualification' value='FPNP'>Family Practice Nurse Practitioner</option>
-									<option id='qualificationHS' name='qualification' value='HS'>High School Graduate</option>
-									<option id='qualificationJD' name='qualification' value='JD'>Juris Doctor</option>
-									<option id='qualificationMA' name='qualification' value='MA'>Master of Arts</option>
-									<option id='qualificationMBA' name='qualification' value='MBA'>Master of Business Administration</option>
-									<option id='qualificationMCE' name='qualification' value='MCE'>Master of Civil Engineering</option>
-									<option id='qualificationMD' name='qualification' value='MD'>Doctor of Medicine</option>
-									<option id='qualificationMDA' name='qualification' value='MDA'>Medical Assistant</option>
-									<option id='qualificationMDI' name='qualification' value='MDI'>Master of Divinity</option>
-									<option id='qualificationME' name='qualification' value='ME'>Master of Engineering</option>
-									<option id='qualificationMED' name='qualification' value='MED'>Master of Education</option>
-									<option id='qualificationMEE' name='qualification' value='MEE'>Master of Electrical Engineering</option>
-									<option id='qualificationMFA' name='qualification' value='MFA'>Master of Fine Arts</option>
-									<option id='qualificationMME' name='qualification' value='MME'>Master of Mechanical Engineering</option>
-									<option id='qualificationMS' name='qualification' value='MS'>Master of Science</option>
-									<option id='qualificationMSL' name='qualification' value='MSL'>Master of Science - Law</option>
-									<option id='qualificationMSN' name='qualification' value='MSN'>Master of Science - Nursing</option>
-									<option id='qualificationMT' name='qualification' value='MT'>Medical Technician</option>
-									<option id='qualificationMTH' name='qualification' value='MTH'>Master of Theology</option>
-									<option id='qualificationNG' name='qualification' value='NG'>Non-Graduate</option>
-									<option id='qualificationNP' name='qualification' value='NP'>Nurse Practitioner</option>
-									<option id='qualificationPA' name='qualification' value='PA'>Physician Assistant</option>
-									<option id='qualificationPHD' name='qualification' value='PHD'>Doctor of Philosophy</option>
-									<option id='qualificationPHE' name='qualification' value='PHE'>Doctor of Engineering</option>
-									<option id='qualificationPHS' name='qualification' value='PHS'>Doctor of Science</option>
-									<option id='qualificationPN' name='qualification' value='PN'>Advanced Practice Nurse</option>
-									<option id='qualificationPharmD' name='qualification' value='PharmD'>Doctor of Pharmacy</option>
-									<option id='qualificationRMA' name='qualification' value='RMA'>Registered Medical Assistant</option>
-									<option id='qualificationRN' name='qualification' value='RN'>Registered Nurse</option>
-									<option id='qualificationRPH' name='qualification' value='RPH'>Registered Pharmacist</option>
-									<option id='qualificationSEC' name='qualification' value='SEC'>Secretarial Certificate</option>
-									<option id='qualificationTS' name='qualification' value='TS'>Trade School Graduate</option>			
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td class="column0">University: </td>
-						<td class="hgap"></td>
-						<td class="column2"><input type="text" id="university" name="graduateInstitution" maxlength="75" size="50"/></td>
-					</tr>
-					<tr>
-						<td class="column0">Since: </td>
-						<td class="hgap"></td>
-						<td class="column2"><input type="number" id="graduatedSince" name="userQualification" min="1900" max="2019" /></td>
-					</tr>
-				</table>
-				<div class="vgap">
-					<h2>Date Of Birth</h2>
-				</div>
-				<table>
-					<tr>
-						<td class="column0">Year:</td>
-						<td class="hgap"></td>
-						<td class="column2"><input type="number" id="year" name="userDOB" min="1900" max="2019" placeholder="1999"/></td>
-					</tr>
-					<tr>
-						<td class="column0">Month:</td>
-						<td class="hgap"></td>
-						<td class="column2"><p id="monthDOB">loading...</p></td>
-					</tr>
-					<tr>
-						<td class="column0">Day:</td>
-						<td class="hgap"></td>
-						<td class="column2"><p id="dayDOB">loading...</p></td>
-					</tr>
-				</table>
-				<div class="vgap">
-					<h2>Contact</h2>
-				</div>
-				
-<!--					
+
+<body onload="loadArray('monthDOB'),loadArray('dayDOB'),fillCookie(fam, giv);">
+	<nav>
+		<div id="sidebar">
+			<div class="toggle-btn" onclick="toggleSidebar()">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="logo">
+				<h4>NAVIGATATION</h4>
+			</div>
+			<div class="part">
+				<h5>PRIVATE</h5>
+			</div>
+			<ul>
+				<li><a href="patient_v2.htm">+ Patient</a></li>
+				<li><a href="practitioner.htm">+ Practitioner</a></li>
+				<li><a href="practitionerRole.htm">+ Practitioner Role</a></li>
+				<li><a href="encounter.htm">Encounter</a></li>
+			</ul>
+			<div class="part">
+				<h5>PUBLIC</h5>
+			</div>
+			<ul>
+				<li><a
+						href="http://www.tzuchi.org.my/fundraising/en/%E6%B4%97%E8%85%8E%E4%B8%AD%E5%BF%83%E7%9A%84%E5%8A%9F%E8%83%BD/">About
+						Us</a></li>
+			</ul>
+			<div class="vgap">
+				<p id="accFHIR"></p>
+			</div>
+		</div>
+	</nav>
+	<div class="content">
+		<div class="vgap">
+			<h2>Basic Identity</h2>
+		</div>
+		<table>
+			<tr>
+				<td class="column0">Title:</td>
+				<td class="hgap"></td>
+				<td class="column2">
+					<select id="title">
+						<option id="title0" name="title" value="mr">Mr.</option>
+						<option id="title1" name="title" value="mrs">Mrs.</option>
+						<option id="title2" name="title" value="miss">Miss.</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="column0">First Name:</td>
+				<td class="hgap"></td>
+				<td class="column2"><input type="text" id="given" name="username" /></td>
+			</tr>
+			<tr>
+				<td class="column0">Last Name:</td>
+				<td class="hgap"></td>
+				<td class="column2"><input type="text" id="family" name="username" /></td>
+			</tr>
+			<tr>
+				<td class="column0">中文姓名:</td>
+				<td class="hgap"></td>
+				<td class="column2"><input type="text" id="mandrinName" name="username" /></td>
+			</tr>
+			<tr>
+				<td class="column0">National Identity Number:</td>
+				<td class="hgap"></td>
+				<td class="column2"><input type="text" id="nid" name="userIdentifier" /></td>
+			</tr>
+			<tr>
+				<td class="column0">Welfare Identity Number:</td>
+				<td class="hgap"></td>
+				<td class="column2"><input type="text" id="wid" name="userIdentifier" /></td>
+			</tr>
+			<tr>
+				<td class="column0">Gender:</td>
+				<td class="hgap"></td>
+				<td class="column2">
+					<select id="gender">
+						<option id="gender0" name="usergender" value="male">Male</option>
+						<option id="gender1" name="usergender" value="female">Female</option>
+						<option id="gender2" name="usergender" value="unknown">Unknown</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="column0">Marital Status:</td>
+				<td class="hgap"></td>
+				<td class="column2">
+					<select id="marital">
+						<option id="marital0" name="usermarital" value="M">Married</option>
+						<option id="marital1" name="usermarital" value="P">Polygamous</option>
+						<option id="marital2" name="usermarital" value="S">Single</option>
+						<option id="marital3" name="usermarital" value="D">Divorced</option>
+						<option id="marital4" name="usermarital" value="UNK">Unknown</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<div class="vgap">
+			<h2>Qualification</h2>
+		</div>
+		<table>
+			<tr>
+				<td class="column0">Higherst Educational Level:</td>
+				<td class="hgap"></td>
+				<td class="column2">
+					<select id="highestEducationLevel">
+						<option id='qualificationAA' name='qualification' value='AA'>Associate of Arts</option>
+						<option id='qualificationAAS' name='qualification' value='AAS'>Associate of Applied Science
+						</option>
+						<option id='qualificationABA' name='qualification' value='ABA'>Associate of Business
+							Administration</option>
+						<option id='qualificationAE' name='qualification' value='AE'>Associate of Engineering</option>
+						<option id='qualificationAS' name='qualification' value='AS'>Associate of Science</option>
+						<option id='qualificationBA' name='qualification' value='BA'>Bachelor of Arts</option>
+						<option id='qualificationBBA' name='qualification' value='BBA'>Bachelor of Business
+							Administration</option>
+						<option id='qualificationBE' name='qualification' value='BE'>Bachelor or Engineering</option>
+						<option id='qualificationBFA' name='qualification' value='BFA'>Bachelor of Fine Arts</option>
+						<option id='qualificationBN' name='qualification' value='BN'>Bachelor of Nursing</option>
+						<option id='qualificationBS' name='qualification' value='BS'>Bachelor of Science</option>
+						<option id='qualificationBSL' name='qualification' value='BSL'>Bachelor of Science - Law
+						</option>
+						<option id='qualificationBSN' name='qualification' value='BSN'>Bachelor on Science - Nursing
+						</option>
+						<option id='qualificationBT' name='qualification' value='BT'>Bachelor of Theology</option>
+						<option id='qualificationCANP' name='qualification' value='CANP'>Certified Adult Nurse
+							Practitioner</option>
+						<option id='qualificationCER' name='qualification' value='CER'>Certificate</option>
+						<option id='qualificationCMA' name='qualification' value='CMA'>Certified Medical Assistant
+						</option>
+						<option id='qualificationCNM' name='qualification' value='CNM'>Certified Nurse Midwife</option>
+						<option id='qualificationCNP' name='qualification' value='CNP'>Certified Nurse Practitioner
+						</option>
+						<option id='qualificationCNS' name='qualification' value='CNS'>Certified Nurse Specialist
+						</option>
+						<option id='qualificationCPNP' name='qualification' value='CPNP'>Certified Pediatric Nurse
+							Practitioner</option>
+						<option id='qualificationCRN' name='qualification' value='CRN'>Certified Registered Nurse
+						</option>
+						<option id='qualificationCTR' name='qualification' value='CTR'>Certified Tumor Registrar
+						</option>
+						<option id='qualificationDBA' name='qualification' value='DBA'>Doctor of Business Administration
+						</option>
+						<option id='qualificationDED' name='qualification' value='DED'>Doctor of Education</option>
+						<option id='qualificationDIP' name='qualification' value='DIP'>Diploma</option>
+						<option id='qualificationDO' name='qualification' value='DO'>Doctor of Osteopathy</option>
+						<option id='qualificationEMT' name='qualification' value='EMT'>Emergency Medical Technician
+						</option>
+						<option id='qualificationEMTP' name='qualification' value='EMTP'>Emergency Medical Technician -
+							Paramedic</option>
+						<option id='qualificationFPNP' name='qualification' value='FPNP'>Family Practice Nurse
+							Practitioner</option>
+						<option id='qualificationHS' name='qualification' value='HS'>High School Graduate</option>
+						<option id='qualificationJD' name='qualification' value='JD'>Juris Doctor</option>
+						<option id='qualificationMA' name='qualification' value='MA'>Master of Arts</option>
+						<option id='qualificationMBA' name='qualification' value='MBA'>Master of Business Administration
+						</option>
+						<option id='qualificationMCE' name='qualification' value='MCE'>Master of Civil Engineering
+						</option>
+						<option id='qualificationMD' name='qualification' value='MD'>Doctor of Medicine</option>
+						<option id='qualificationMDA' name='qualification' value='MDA'>Medical Assistant</option>
+						<option id='qualificationMDI' name='qualification' value='MDI'>Master of Divinity</option>
+						<option id='qualificationME' name='qualification' value='ME'>Master of Engineering</option>
+						<option id='qualificationMED' name='qualification' value='MED'>Master of Education</option>
+						<option id='qualificationMEE' name='qualification' value='MEE'>Master of Electrical Engineering
+						</option>
+						<option id='qualificationMFA' name='qualification' value='MFA'>Master of Fine Arts</option>
+						<option id='qualificationMME' name='qualification' value='MME'>Master of Mechanical Engineering
+						</option>
+						<option id='qualificationMS' name='qualification' value='MS'>Master of Science</option>
+						<option id='qualificationMSL' name='qualification' value='MSL'>Master of Science - Law</option>
+						<option id='qualificationMSN' name='qualification' value='MSN'>Master of Science - Nursing
+						</option>
+						<option id='qualificationMT' name='qualification' value='MT'>Medical Technician</option>
+						<option id='qualificationMTH' name='qualification' value='MTH'>Master of Theology</option>
+						<option id='qualificationNG' name='qualification' value='NG'>Non-Graduate</option>
+						<option id='qualificationNP' name='qualification' value='NP'>Nurse Practitioner</option>
+						<option id='qualificationPA' name='qualification' value='PA'>Physician Assistant</option>
+						<option id='qualificationPHD' name='qualification' value='PHD'>Doctor of Philosophy</option>
+						<option id='qualificationPHE' name='qualification' value='PHE'>Doctor of Engineering</option>
+						<option id='qualificationPHS' name='qualification' value='PHS'>Doctor of Science</option>
+						<option id='qualificationPN' name='qualification' value='PN'>Advanced Practice Nurse</option>
+						<option id='qualificationPharmD' name='qualification' value='PharmD'>Doctor of Pharmacy</option>
+						<option id='qualificationRMA' name='qualification' value='RMA'>Registered Medical Assistant
+						</option>
+						<option id='qualificationRN' name='qualification' value='RN'>Registered Nurse</option>
+						<option id='qualificationRPH' name='qualification' value='RPH'>Registered Pharmacist</option>
+						<option id='qualificationSEC' name='qualification' value='SEC'>Secretarial Certificate</option>
+						<option id='qualificationTS' name='qualification' value='TS'>Trade School Graduate</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="column0">University: </td>
+				<td class="hgap"></td>
+				<td class="column2"><input type="text" id="university" name="graduateInstitution" maxlength="75"
+						size="50" /></td>
+			</tr>
+			<tr>
+				<td class="column0">Since: </td>
+				<td class="hgap"></td>
+				<td class="column2"><input type="number" id="graduatedSince" name="userQualification" min="1900"
+						max="2019" /></td>
+			</tr>
+		</table>
+		<div class="vgap">
+			<h2>Date Of Birth</h2>
+		</div>
+		<table>
+			<tr>
+				<td class="column0">Year:</td>
+				<td class="hgap"></td>
+				<td class="column2"><input type="number" id="year" name="userDOB" min="1900" max="2019"
+						placeholder="1999" /></td>
+			</tr>
+			<tr>
+				<td class="column0">Month:</td>
+				<td class="hgap"></td>
+				<td class="column2">
+					<p id="monthDOB">loading...</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="column0">Day:</td>
+				<td class="hgap"></td>
+				<td class="column2">
+					<p id="dayDOB">loading...</p>
+				</td>
+			</tr>
+		</table>
+		<div class="vgap">
+			<h2>Contact</h2>
+		</div>
+
+		<!--					
 					<tr>
 						<td class="column0">Contact Type:</td>
 						<td class="hgap"></td>
@@ -240,62 +273,64 @@
 							</select>
 						</td>
 					</tr>
--->					
-				<table>
-					<tr>
-						<td class="column0">Phone Number:</td>
-						<td class="hgap"></td>
-						<td class="column2"><input type="text" id="telecomP" name="usercontact" placeholder="+886"/>
-					</tr>
-					<tr>
-						<td class="column0">Contact Point:</td>
-						<td class="hgap"></td>
-						<td class="column2">
-							<select id="contactP">
-								<option id="contactP0" name="usercontactUse" value="home">Home</option>
-								<option id="contactP1" name="usercontactUse" value="work">Work</option>
-								<option id="contactP2" name="usercontactUse" value="temp">Temporary</option>
-								<option id="contactP3" name="usercontactUse" value="old">Old</option>
-								<option id="contactP4" name="usercontactUse" value="mobile">Mobile</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td class="column0">E-Mail:</td>
-						<td class="hgap"></td>
-						<td class="column2"><input type="text" id="telecomE" name="usercontact" placeholder="@gmail.com"/>
-					</tr>
-					<tr>
-						<td class="column0">Contact Point:</td>
-						<td class="hgap"></td>
-						<td class="column2">
-							<select id="contactE">
-								<option id="contactE0" name="usercontactUse" value="home">Home</option>
-								<option id="contactE1" name="usercontactUse" value="work">Work</option>
-								<option id="contactE2" name="usercontactUse" value="temp">Temporary</option>
-								<option id="contactE3" name="usercontactUse" value="old">Old</option>
-								<option id="contactE4" name="usercontactUse" value="mobile">Mobile</option>
-							</select>
-						</td>
-					</tr>
-				</table>
-				<div class="vgap">
-					<h2>Address</h2>
-				</div>
-				<table id="addressBox">
-					<tr>
-						<td><input type="text" id="addLine" name="userAddress" maxLength="15" placeholder="line1" /></td>
-						<td><input type="text" id="addPostal" name="userAddress" maxLength="15" placeholder="postal code" /></td>
-						<td><input type="text" id="addCity" name="userAddress" maxLength="15" placeholder="city" /></td>
-						<td><input text="text" id="addCountry" name="userAddress" maxLength="15" placeholder="country" /></td>
-					</tr>
-				</table>
-				<div class="vgap">
-					<button type="button" id="button0" onclick="practitionerPost();">Submit</button>
-					<p id="hint">Thank you so much for your participation!</p>
-				</div>
-			</div>
-					
-					
-	</body>
+-->
+		<table>
+			<tr>
+				<td class="column0">Phone Number:</td>
+				<td class="hgap"></td>
+				<td class="column2"><input type="text" id="telecomP" name="usercontact" placeholder="+886" />
+			</tr>
+			<tr>
+				<td class="column0">Contact Point:</td>
+				<td class="hgap"></td>
+				<td class="column2">
+					<select id="contactP">
+						<option id="contactP0" name="usercontactUse" value="home">Home</option>
+						<option id="contactP1" name="usercontactUse" value="work">Work</option>
+						<option id="contactP2" name="usercontactUse" value="temp">Temporary</option>
+						<option id="contactP3" name="usercontactUse" value="old">Old</option>
+						<option id="contactP4" name="usercontactUse" value="mobile">Mobile</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="column0">E-Mail:</td>
+				<td class="hgap"></td>
+				<td class="column2"><input type="text" id="telecomE" name="usercontact" placeholder="@gmail.com" />
+			</tr>
+			<tr>
+				<td class="column0">Contact Point:</td>
+				<td class="hgap"></td>
+				<td class="column2">
+					<select id="contactE">
+						<option id="contactE0" name="usercontactUse" value="home">Home</option>
+						<option id="contactE1" name="usercontactUse" value="work">Work</option>
+						<option id="contactE2" name="usercontactUse" value="temp">Temporary</option>
+						<option id="contactE3" name="usercontactUse" value="old">Old</option>
+						<option id="contactE4" name="usercontactUse" value="mobile">Mobile</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<div class="vgap">
+			<h2>Address</h2>
+		</div>
+		<table id="addressBox">
+			<tr>
+				<td><input type="text" id="addLine" name="userAddress" maxLength="15" placeholder="line1" /></td>
+				<td><input type="text" id="addPostal" name="userAddress" maxLength="15" placeholder="postal code" />
+				</td>
+				<td><input type="text" id="addCity" name="userAddress" maxLength="15" placeholder="city" /></td>
+				<td><input text="text" id="addCountry" name="userAddress" maxLength="15" placeholder="country" /></td>
+			</tr>
+		</table>
+		<div class="vgap">
+			<button type="button" id="button0" onclick="practitionerPost();">Submit</button>
+			<p id="hint">Thank you so much for your participation!</p>
+		</div>
+	</div>
+
+
+</body>
+
 </html>
