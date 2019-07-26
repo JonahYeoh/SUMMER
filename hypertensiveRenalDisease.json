@@ -1,0 +1,268 @@
+[
+    {
+        "_id": "5ac257904403d2d4caa8f33e",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "14973001",
+        "preferredTerm": "Renal sclerosis with hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac257a24403d2d4caa96129",
+        "isLeafInferred": false,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "104931000119100",
+        "preferredTerm": "Chronic kidney disease due to hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 27,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac257c34403d2d4caaa3c48",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "78544004",
+        "preferredTerm": "Chronic hypertensive uremia (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac257d14403d2d4caaa9279",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "198949009",
+        "preferredTerm": "Renal hypertension complicating pregnancy, childbirth and the puerperium (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 4,
+        "inferredDescendants": 4,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac257f24403d2d4caab617b",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "473392002",
+        "preferredTerm": "Hypertensive nephrosclerosis (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 2,
+        "inferredDescendants": 2,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258174403d2d4caac5b83",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "193003",
+        "preferredTerm": "Benign hypertensive renal disease (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 3,
+        "inferredDescendants": 3,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258184403d2d4caac6359",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "704667004",
+        "preferredTerm": "Hypertension concurrent and due to end stage renal disease on dialysis (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 2,
+        "inferredDescendants": 3,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258304403d2d4caacdb96",
+        "isLeafInferred": false,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "49220004",
+        "preferredTerm": "Hypertensive renal failure (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 11,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac2583a4403d2d4caad02e3",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "65443008",
+        "preferredTerm": "Malignant hypertensive renal disease (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 10,
+        "inferredDescendants": 10,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac2583d4403d2d4caad1428",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "703310005",
+        "preferredTerm": "Autosomal dominant progressive nephropathy with hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258594403d2d4caad8a93",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "86234004",
+        "preferredTerm": "Hypertensive heart AND renal disease (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 20,
+        "inferredDescendants": 20,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258694403d2d4caadee0a",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "73030000",
+        "preferredTerm": "Hypertensive renal disease in obstetric context (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 4,
+        "inferredDescendants": 4,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258894403d2d4caae3472",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "367821000119106",
+        "preferredTerm": "Hypertension due to compression of renal parenchyma (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258c04403d2d4caaec35b",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "16147005",
+        "preferredTerm": "Arteriolar nephritis (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    }
+]

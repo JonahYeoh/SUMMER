@@ -9,6 +9,7 @@ function period_start() {
     var h = today.getHours();
     var m = today.getMinutes();
     var s = today.getSeconds();
+    h = checkTime(h);
     m = checkTime(m);
     s = checkTime(s);
     date = today.getDate();

@@ -14,7 +14,7 @@ function loadArray(id){
 				var m = month.length;
 				var str = "<select id=\"fhir"+month[0]+"\" name=\"month\">";
 				for ( i = 1; i < m; i++ ){
-					if ( i < 9 )
+					if ( i <= 9 )
 						str += "<option id=\"" + month[0] + i + "\" name=\"" + month[0] + "\">0" + i + "</option>";
 					else
 						str += "<option id=\"" + month[0] + i + "\" name=\"" + month[0] + "\">" + i + "</option>";

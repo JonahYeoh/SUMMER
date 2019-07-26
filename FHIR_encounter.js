@@ -1,7 +1,7 @@
 function verify() {
         var urL = "http://hapi.fhir.org/baseDstu3/Patient?organization=1945183&&given:exact=";
-        var given = document.getElementById("given_name").value;
-        var family = document.getElementById("family_name").value;
+        var given = document.getElementById("given").value;
+        var family = document.getElementById("family").value;
         if (given != "" && family != "") {
             urL = urL + given + "&&family=" + family;
             getData(urL, 1);
@@ -120,7 +120,7 @@ function verify() {
 		};
 		text.code.coding[0].code = code;
 		text.subject.reference = "Patient/" + getCookie("patientId");
-		text.recorder.reference = "Practitioner/" + getCookie("practitionerId");
+		text.recorder.reference = "Practitioner/" + document.getElementById("pid").value;
 		text.period.start = document.getElementById("start_time").value;
 		end_str = period_start();
 		text.period.end = end_str;

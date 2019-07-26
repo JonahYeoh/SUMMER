@@ -1,0 +1,515 @@
+[
+    {
+        "_id": "5ac257974403d2d4caa91bfe",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "140101000119109",
+        "preferredTerm": "Hypertension in chronic kidney disease stage 5 due to type 2 diabetes mellitus (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac257994403d2d4caa92771",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "198941007",
+        "preferredTerm": "Hypertension complicating pregnancy, childbirth and the puerperium (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 5,
+        "inferredDescendants": 5,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac257b64403d2d4caa9e3d2",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "206596003",
+        "preferredTerm": "Neonatal hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac257b84403d2d4caa9eee5",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "48194001",
+        "preferredTerm": "Pregnancy-induced hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 34,
+        "inferredDescendants": 34,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac257e84403d2d4caab1f9d",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "140111000119107",
+        "preferredTerm": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac257e94403d2d4caab2699",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "69909000",
+        "preferredTerm": "Eclampsia added to pre-existing hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 1,
+        "inferredDescendants": 1,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac2580e4403d2d4caac1efe",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "71701000119105",
+        "preferredTerm": "Hypertension in chronic kidney disease due to type 1 diabetes mellitus (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258114403d2d4caac2c6d",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "706882009",
+        "preferredTerm": "Hypertensive crisis (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 10,
+        "inferredDescendants": 10,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258144403d2d4caac3f92",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "10725009",
+        "preferredTerm": "Benign hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 7,
+        "inferredDescendants": 7,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258164403d2d4caac4fe1",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "697929007",
+        "preferredTerm": "Intermittent hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 4,
+        "inferredDescendants": 4,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac2581c4403d2d4caac79ca",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "367390009",
+        "preferredTerm": "Hypertension in the obstetric context (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 32,
+        "inferredDescendants": 32,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258284403d2d4caacb675",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "62275004",
+        "preferredTerm": "Hypertensive episode (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258314403d2d4caace38a",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "140121000119100",
+        "preferredTerm": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac2583f4403d2d4caad2237",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "5501000119106",
+        "preferredTerm": "Postoperative hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258434403d2d4caad3d09",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "84094009",
+        "preferredTerm": "Rebound hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258484403d2d4caad4b1b",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "712832005",
+        "preferredTerm": "Supine hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258524403d2d4caad7937",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "23130000",
+        "preferredTerm": "Paroxysmal hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258604403d2d4caadbc4a",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "31992008",
+        "preferredTerm": "Secondary hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 22,
+        "inferredDescendants": 22,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258764403d2d4caae077f",
+        "isLeafInferred": false,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "71421000119105",
+        "preferredTerm": "Hypertension in chronic kidney disease due to type 2 diabetes mellitus (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 4,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac2588d4403d2d4caae4107",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "397748008",
+        "preferredTerm": "Hypertension with albuminuria (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258a14403d2d4caae66ab",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "48146000",
+        "preferredTerm": "Diastolic hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 4,
+        "inferredDescendants": 4,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258a84403d2d4caae7bf0",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "56218007",
+        "preferredTerm": "Systolic hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 2,
+        "inferredDescendants": 2,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258aa4403d2d4caae8513",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "720568003",
+        "preferredTerm": "Brachydactyly and arterial hypertension syndrome (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258be4403d2d4caaebf7d",
+        "isLeafInferred": false,
+        "isLeafStated": false,
+        "v": "2",
+        "conceptId": "59621000",
+        "preferredTerm": "Essential hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 15,
+        "inferredDescendants": 15,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258e04403d2d4caaf288d",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "140131000119102",
+        "preferredTerm": "Hypertension in chronic kidney disease stage 2 due to type 2 diabetes mellitus (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258e34403d2d4caaf3cec",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "118781000119108",
+        "preferredTerm": "Pre-existing hypertensive chronic kidney disease in mother complicating pregnancy (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000073002",
+            "preferredTerm": "Sufficiently defined concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    },
+    {
+        "_id": "5ac258e84403d2d4caaf6551",
+        "isLeafInferred": true,
+        "isLeafStated": true,
+        "v": "2",
+        "conceptId": "429198000",
+        "preferredTerm": "Exertional hypertension (disorder)",
+        "definitionStatus": {
+            "conceptId": "900000000000074008",
+            "preferredTerm": "Necessary but not sufficient concept definition status (core metadata concept)"
+        },
+        "statedDescendants": 0,
+        "inferredDescendants": 0,
+        "active": true,
+        "module": {
+            "conceptId": "900000000000207008",
+            "preferredTerm": "SNOMED CT core module (core metadata concept)"
+        }
+    }
+]
