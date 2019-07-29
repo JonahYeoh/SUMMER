@@ -69,16 +69,16 @@ function patientPost() {
                 "use": "official",
                 "family": "",
                 "given": [
-                    "34r"
+                    ""
                 ],
                 "prefix": "mr",
-                "text": "abcd king"
+                "text": ""
             },
             {
                 "use": "official",
                 "family": "",
                 "given": [
-                    "34r"
+                    ""
                 ],
                 "text": ""
             },
@@ -86,7 +86,7 @@ function patientPost() {
                 "use": "official",
                 "family": "",
                 "given": [
-                    "34r"
+                    ""
                 ],
                 "text": ""
             }
@@ -123,17 +123,17 @@ function patientPost() {
                 "name": [
                     {
                         "use": "official",
-                        "family": "aqecd",
+                        "family": "",
                         "given": [
-                            "qeng"
+                            ""
                         ],
-                        "text": "aqecd qeng"
+                        "text": ""
                     }
                 ],
                 "telecom": [
                     {
                         "system": "phone",
-                        "value": "234567"
+                        "value": ""
                     }
                 ],
                 "gender": "male"
@@ -157,20 +157,8 @@ function patientPost() {
                     "coding": [
                         {
                             "system": "urn:ietf:bcp:47",
-                            "code": "zh-CN",
-                            "display": "Chinese (China)"
-                        }
-                    ]
-                },
-                "preferred": false
-            },
-            {
-                "language": {
-                    "coding": [
-                        {
-                            "system": "urn:ietf:bcp:47",
-                            "code": "en-US",
-                            "display": "English (United States)"
+                            "code": "",
+                            "display": ""
                         }
                     ]
                 },
@@ -199,6 +187,24 @@ function patientPost() {
                 "postalCode": "demo"
             }
         ],
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/registry",
+                "extension": [
+                    {
+                        "url": "http://terminology.hl7.org/CodeSystem/v3-Race",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v3-Race",
+                                    "code": "1002-5"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
         "managingOrganization": {
             "reference": "Organization/1945183"
         }
@@ -211,21 +217,17 @@ function patientPost() {
     if ((text.identifier[2].value = document.getElementById("wid").value) == '')
         return 0;
 
-    if ((text.name[0].family = document.getElementById("family").value) != '' || (text.name[0].given[0] = document.getElementById("given").value) != '') {
+    if ((text.name[0].given[0] = document.getElementById("given").value) != '') {
         text.name[0].prefix = document.getElementById("title").value;
         text.name[0].given[0] = document.getElementById("given").value;
-        text.name[0].text = text.name[0].family + " " + text.name[0].given[0];
     }
     else
         return 0;
 
-    text.name[1].family = document.getElementById("familyTaiwan").value;
     text.name[1].given[0] = document.getElementById("givenTaiwan").value;
-    text.name[1].text = text.name[1].family + " " + text.name[1].given[0];
 
-    if ((text.name[2].family = document.getElementById("familySimplified").value) != '' || (text.name[2].given[0] = document.getElementById("givenSimplified").value) != ''){
+    if ((text.name[2].given[0] = document.getElementById("givenSimplified").value) != '') {
         text.name[2].given[0] = document.getElementById("givenSimplified").value;
-        text.name[2].text = text.name[2].family + " " + text.name[2].given[0];
     }
 
     if ((text.telecom[0].value = document.getElementById("telecom0").value) == '')
@@ -239,21 +241,21 @@ function patientPost() {
 
     if (document.getElementById("lang0y").checked)
         text.communication[0].preferred = true;
-    if (document.getElementById("lang1y").checked)
+    if (document.getElementById("communicationLanguage").value != '----') {
         text.communication[1].preferred = true;
-    if (document.getElementById("lang2y").checked)
-        text.communication[2].preferred = true;
+        text.communication[1].language.coding[0].code = document.getElementById("communicationLanguage").value;
+    }
 
     if (contactValue() != '') {
         text.contact[0].relationship = document.getElementById("contact").value;
-        text.contact[0].name[0].family = document.getElementById("familyContact").value;
         text.contact[0].name[0].given[0] = document.getElementById("givenContact").value;
-        text.contact[0].name[0].text = text.contact[0].name[0].family + " " + text.contact[0].name[0].given[0];
         text.contact[0].telecom[0].value = document.getElementById("telecomContact").value;
         text.contact[0].gender = document.getElementById("genderContact").value;
     }
-    else
+    else {
         text.contact[0] = "";
+        status = false;
+    }
 
     x = document.getElementById("year").value;
     y = document.getElementById("fhirmonth").value;
@@ -288,6 +290,8 @@ function patientPost() {
     else
         text.address[1] = "";
 
+    text.extension[0].extension[0].valueCodeableConcept.coding[0].code = document.getElementById("raceList").value;
+    
     if (status == true) {
         var myJSON = JSON.stringify(text);
         var url = "http://hapi.fhir.org/baseDstu3/Patient/" + text.id;
