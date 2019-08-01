@@ -236,7 +236,7 @@ function patientPost() {
     text.telecom[2].value = document.getElementById("telecom2").value;
 
     text.gender = gender();
-
+    
     text.maritalStatus.coding[0].code = document.getElementById("marital").value;
 
     if (document.getElementById("lang0y").checked)

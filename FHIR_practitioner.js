@@ -6,9 +6,10 @@ var contactValue = () => {
 }
 
 function practitionerPost() {
+    var status = true;
     var text =
     {
-        "resourceType": "Patient",
+        "resourceType": "Practitioner",
         "id": "ax98234",
         "text": {
             "status": "generated"
@@ -290,6 +291,7 @@ function practitionerPost() {
         k = document.getElementById("addPostal").value;
         l = document.getElementById("addCountry").value;
         text.address[0].text = i + ", " + j + ", " + k + ", " + l;
+        status = true;
     }
     else {
         alert("Field missing");
