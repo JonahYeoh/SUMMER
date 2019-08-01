@@ -206,7 +206,7 @@ function patientPost() {
             }
         ],
         "managingOrganization": {
-            "reference": "Organization/1945183"
+            "reference": "Organization/5053"
         }
     }
 
@@ -294,7 +294,7 @@ function patientPost() {
     
     if (status == true) {
         var myJSON = JSON.stringify(text);
-        var url = "http://hapi.fhir.org/baseDstu3/Patient/" + text.id;
+        var url = "http://192.168.174.128:8080/hapi-fhir-jpaserver-example/baseDstu3/Patient/" + text.id;
         HTTPPutData(url, myJSON, "patient");
     }
     else
