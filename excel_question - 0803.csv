@@ -1,0 +1,231 @@
+題目,A選項,B選項,C選項,D選項,E選項,答案,章節
+"下列選項何者最適合填入空格? <img _?_= ""img_girl.jpg"">",source,picture,src,jpg,pic,C,Attributes
+width、height屬性提供關於圖片的何種資訊？,resolution,pattern,size,scale,style,C,Attributes
+"下列選項何者最適合填入空格？ <a _?_=""https://www.w3schools.com"">This is a link</a>",link,href,herf,attach,insert,B,Links
+"若想要以文字替代無法顯示的圖片，下列選項何者最適合填入空格？ <br><img arc=""w3schools.png"" _?_=""w3schools Logo"">",cat,let,alt,text,subtitle,C,Links
+"如何在HTML中新增一個文字段落 ""Hellow World!""？",<paragraph>Hello World!</paragraph>,<p>Hello World!</p>,<p Hello World! />,<paragraph Hello World! />,"<p id=""Hello World"" />",B,Paragraph
+下列選項何者最適合填入空格？ <h1>This is a heading._?_ ？, </p>,</heading>,</h1>,</h>,</>,C,Heading
+如何在HTML程式碼中產生一段文字註解？,<!--This is a comment-->,//This is a comment,/*This is a comment*/,$This is a comment,<comment>This is a comment</comment>,A,Comments
+HTML以哪一個標籤表示重要的文字(important text)？,<b>,<strong>,<i>,<important>,<em>,B,Others
+HTML以哪一個標籤表示強調的文字(emphasized text)？,<em>,<italic>,<i>,<emphasize,<remark>,A,Others
+HTML標籤分為開頭與結束兩種，兩者成對出現。請問結束標籤中應包含下列那一個字符？,/,<,>,$,\\,A,Others
+HTML中以哪三種標籤何產生表格？,<table><tr><td>,<table><tr><tt>,<thead><column><row>,<form><column><row>,<style><heading><p>,A,Tables
+如何產生一個以數字編排的條列(list)？,<ul>,<ol>,<list>,<number>,<dot>,B,Lists
+如何產生一個以符號編排的條列(list)？,<ul>,<ol>,<list>,<number>,<dot>,A,Lists
+下列產生勾選式選單的方法何者正確？,<input type=checkbox>,"<input type=""check"">","<input type=""checkbox"">",<checkbox>,<check>,C,Input
+下列產生文字輸入欄的方法何者正確？,"<input type=""textfield"">","<input type=""text"">",<text>,<word>,<write>,B,Input
+下列產生下拉式選單的方法何者正確？,<dropdown>,<select>,<list>,Drop,"<input type=""dropdown"">",B,Input
+下列產生文字顯示區的方法何者正確？,<textarea>,"<input type=""textarea"">","<input type=""textbox"">","<input type=""text"">",<text>,A,Input
+請問以下哪些關於<iframe>的說法正確？,將圖片呈現在網頁中,將網頁呈現在網頁中,"可以通過觸發鏈接<a href=""https://www.w3schools.com""  target=""iframe_a"">W3Schools.com</a>在iframe_a呈現https://www.w3schools.com裡的?容 ",以上皆是,HTML並沒有iframe標簽 ,A,Others
+可使用下列哪一個屬性，將網頁中無法顯示的圖片替換為文字？,<title>,<head>,<meta>,<name>,<header,A,Others
+哪一個HTML屬性可以指定無法顯示的圖片以文字替代？,longdesc,source,alt,src,hyperlink,C,Attributes
+在HTML中「onblur、onfocus」是屬於下列何者分類？,Event attributes,HTML elements,Style attributes,JavaScript function,HTML properties,A,Attributes
+關於HTML<canvas>標籤的功能和者敘述正確？,display database records,draw graphics,create draggable elements,create user interface,scripting,B,Others
+HTML中哪一個屬性用來指定輸入欄不得為空？,compulsory,must,repuired,mandatory,important,C,Input
+"想要產生一個超連結，使文字連結到""default.html""，下列作法何者正確？","<a href=""default.html"">Visit our HTML tutorial.</a>","<link href=""default.html"">Visit our HTML tutorial.</link>","<hyperlink href=""default.html>Visit our HTML tutorial.</hyperlink>","<link src=""default.html"">Visit our HTML tutorial.</link>","<a src=""default.html"">Visit our HTML tutorial.</a>",A,Links
+使用哪一種輸入型可以產生滾動條(slider control)？,slider,search,range,control,adjust,C,Input
+下列哪個標籤可以用長條圖來顯示比例？,<range>,<measure>,<meter>,<control>,<adjust>,C,Input
+如何使用HTML「image屬性」設定一個大小為:寬250像素，高400像素的圖片？,"<img src=""scream.jpg"" width:250 height:400>","<img src=""scream.jpg"" width=""250"" height=""400"">","< img src=""scream.jpg"" ""width""=""250"" ""heght""=""400"">","<img src=""scream.jpg"" ""width"":""250"" ""height"":""400"">","<img src=""scream.jpg"" wide=""250"" tall=""400"">",B,Style
+如何使用 CSS 設定一個大小為:寬250像素，高400像素的圖片？,"<img src=""scream.jpg"" style=""width:250px; height:400px;"">","<img src=""scream.jpg"" style=""width:250;height:400;"">","<img src=""scream.jpg"" style=""wide:250;height:400;"">","<img src=""scream.jpg"" style=""width"":""250"";""heght"":""400"";>","< img src=""scream.jpg"" width=""250"" height=""400"">",A,Style
+誰制定了網頁標準？,The World Wide Web Consortium,Mozilla,Google,Facebook,Twitter,A,Others
+下列哪一個標籤用來產生最大字體的標題(heading)？,<br>,<head>,<h1>,<HEADING>,<HEAD>,C,Heading
+如何在網頁中新增背景顏色？,"<body style=""background-color:yellow;"">",<background>yellow</background>,"<body bg=""yellow"">","<body style=""color:yellow"">",<yellow>Body</yellow>,A,Style
+請問<style></style>須放在何處？,<body>中的最上方,<body>中的底部,<body>中的中間,<head>中間,任何地方都可,Ｄ,Style
+請問<style>中的text-align:inherit代表什麼意思？,文字水平置中,文字垂直置中,文字繼承父元素的text-align屬性,文字水平向左對齊,文字垂直向右對齊,C,Style
+請問<style>中的height:100%代表什麼意思？,讓瀏覽器自動判斷網頁元素的高度,給100px的高度,用百分比設定網頁元素高度,繼承自父層的高度屬性值,沒這個東西,C,Style
+請問<style>中下列何者更改字顏色的程式碼正確？,color=”blue”,color=blue,color:blue,color:”blue”,以上皆是,C,Style
+請問<style>中下列何者更改背景顏色的程式碼正確？,backgroundcolor=”blue”,background-color:blue,background-color=”blue”,backgroundcolor:blue,backgroundcolor:”blue”,B,Style
+"請問table中border=""0""表示什麼意思？",表格會顯示邊框，邊框粗細為1,表格不顯示邊框,表格會顯示邊框，邊框粗細為固定的,與邊框粗細無關,表格會顯示邊框，邊框的粗細小於1,B,Style
+"請問<td><font face=""DFKai-sb""></font></td>表示為何？",表格字體為預設文字,表格字體為標楷體,表格字體為monospace字型,表格字體為serif字型,表格字體為微軟正黑體,B,Style
+"請問<td bgcolor=""red"">  </td>表示為何？",全部表格字顏色為紅色,全部表格邊框為紅色,全部表格背景為紅色,僅該表格欄背景為紅色,僅該表格欄邊框為紅色,Ｄ,Style
+"請問<img src=""img_Levi.jpg"" alt=""Levi·Ackerman"">中的alt=""Levi·Ackerman""下列何者說明為真?",在圖片顯示出來時，下面會出現說明圖片的文本,在圖片顯示不出來時，會顯示出的圖片說明,不是必須的，就算沒有打還是可以執行,在圖片顯示不出來時，也不會顯示,alt中的文字和圖片無關是可以的,B,Style
+請問HTML中的IMAGE允許使用下列何選項內的檔案？,僅能用JPG檔的圖片,僅能用GIF,僅能用JPEG、PNG檔的圖片,僅能用PNG檔的圖片,JPEG、PNG、GIF的皆可以用,E, image
+請問要設定圖片的高和寬要怎麼設定？,"<img src=""img_Levi.jpg"" alt=""Levi·Ackerman""　style=""width＝128px;height＝128px;"">","<img src=""img_Levi.jpg"" alt=""Levi·Ackerman""　width＝""128px""　height＝""128px"">","<img src=""img_Levi.jpg"" alt=""Levi·Ackerman""　width：128px　height：128px>","<img src=""img_Levi.jpg"" alt=""Levi·Ackerman""　 style=""width＝128px height＝128px;"">","<img src=""img_Levi.jpg"" alt=""Levi·Ackerman""　width＝""128px"";height＝""128px"">",B, image
+請問用url代表為何？,src中的檔案在同文件夾中,該src屬性不指定圖像的Web地址,該src屬性指定圖像的Web地址,src中的檔案在其他子文件夾中,這是錯誤的用法,C, image
+要將圖片用加上超連接，需要將<img>標記放在下列何者標記內？,<a></a>,<p></p>,<b></b>,<i></i>,<u></u>,A,Links
+"想要產生一個超連結，使圖片連結到""default.html""，下列作法何者正確？","<a href=""default.html""><img src=""smiley.gif"" /></a>","<a href=""smiley.gif"" window_open=""default.html"" />","< img=""smiley.gif"" href=""default.html"" />","<img=""smiley.gif"" href=""default. />","<a href=""default""><img src=""smiley.gif"" /></a>",A,Links
+在HTML中我們使用何種標籤寫入JavaScript?,<script>,<javascript>,<JavaScript>,<JAVASCRIPT> ,<JS> ,A,Where To
+"如何以正確的JavaScript語法修改範例程式: 
+<p id=""demo"">This is a demonstration.</p>?","document.getElementsByName(""demo"").innerHTML = ""Hello World"";","document.getElementById(""demo"").innerHTML = ""Hello World"";","document.getElementById(""demo"").value = ""Hello World"";","document.getElementById(""p"").innerHTML = ""Hello World"";","console.log(""Hello World"", target=""demo"");",B,Syntax
+JavaScript應放在程式碼的何處?,放在<head>或<body>都可以,只能放在<head>,只能放在<body>,只能通過引入外部程式,JavaScript與HTML不相容（無法共用）,A,Where To
+下列關於呼叫外部JS檔案的語法何者正確?,"<script name=""xxx.js"">","<jref=""xxx.js”>","<script src=""xxx.js"">",<script src=""xxx.js""></script>,<js src=""xxx.js""></js>,D,Syntax
+外部JS檔案內，需要包含<script>標籤嗎?,一定要有,不可以有,不一定,,,B,Others
+如何產生一個警告提示(alert box)?,"prompt(""Hello World"");","alert(""Hello World"");","msg(""Hello World"");","window.open(""Hello World"");","alarm(""Hello World"");",B,Events
+在Java Script 中，如何宣告一個 function ?,int myFunction();,function::myFunction();,function myFunction();,public function myFunction();,_myFunction();,C,Function
+在Java Script 中，如何呼叫 function ?,function call myFunction();,myFunction();,function myFunction();,myFunction;,function::myFunction();,B,Function
+JavaScript的語法中，下列關於 if 條件句的寫法何者正確 ?,if i = 5,if i equalTo 5,if ( i == 5 ), if i == 5, IF ( i == 5 ),C,Condition
+JavaScript的語法中，如何設定一個 (當 i 不等於5就不執行) 的條件,if ( !(i != 5) ){執行},if ( i == 5 ){執行},if ( i != 5 ){/*do nothing*/}else{執行},if ( i == 5 ){執行},以上皆是,E,Condition
+下列關於 while迴圈 的寫法何者正確?,while ( i == i ),while ( true ),while ( 0 < 10 ), 以上皆是,while ( i = 0; i < 10; i++ ),D,Condition
+下列關於 for迴圈 的寫法何者正確?,"for ( i = 0, i < 10, i++ )",for i = 10; i++,for ( i = 0; i < 10; i++ ),for ( i = 0;;),for ( ;;i++),C,Condition
+如何新增一段JavaScript註解?,<This is a comment,This is a comment,//This is a comment,<!--This is a comment-->,<comment>This is a comment</comment>,C,Others
+如何插入一段多行註解?,"//This is a comment
+This is a comment//","/*This is a comment
+This is a comment*/","<!--This is a comment
+This is a comment-->",<comment>This is a comment</comment>,以上皆非,B,Others
+如何在JavaScript中宣告一個陣列?,"var color = ""red"", ""green"", ""blue""","var colors = (1:""red"", 2:""green"", 3:""blue"")","var colors = [""red"", ""green"", ""blue""]",int color = new int[];,int color = new int(""green"", ""red"", ""blue"");,C,Arrays
+JavaScript中，如何藉由呼叫w2，開啟一個新的視窗?,"w2 = window.open(""http://www.w3schools.com"");","open.window(""w2"");","window.open(""w2"");","w2 = open.window(""http://www.w3schools.com"");",w2(function(){window.open("http://www.w3schools.com");});,A,Events
+當點擊網頁上的東西時，會觸發什麼事件?,onclick,onmouseover,onchange,hover,以上皆非,A,Events
+如何宣告一個JavaScript變數?,String carName;,var carName;,variable carName;,char carName[10];,以上皆非,B,Variables
+(A ? B : C) 等於下列哪一種條件式寫法?,if ( A ) { B } else { C },if ( A == B ) C,if ( A != B ) C,if ( A ) { B; C; },A if ( B : C ),A,Condition
+下列哪個事件屬於鍵盤事件?,onclick,onblur,onblink,onkeyboardpress,onkeydown,C,Events
+下列何者不是關係運算子(comparison operator)?,<,>,<b></b>==,!=,$=,C,Condition
+如何表示三個變數都相等的條件?,( A == B == C ),( A == B ) && ( B == C ),( A == B ) && ( B = C ),( A = B ) & ( B = C ),A = B = C,B,Condition
+一個function可以接收多少個參數?,0個,不限數量(正整數),只能一個,只能兩個,看引數有幾個參數就有幾個,E,Function
+哪一個事件是當頁面載入完畢後執行?,onfinished,onload,onunload,oncomplete,ondone,B,Events
+下列選項何者不是參數可能的型態?,文字(常數),變數,邏輯運算子，如：＆＆（AND）、｜｜（OR）,數字,字串(變數),C,Function
+若將兩個字串相加，執行時會印出？（例如： joy + happy）,第一個字串 ( joy ),第二個字串（ happy ）,把第二個字串接在第一個後面（ joyhappy ）,印出?joy+happy?這段文字,把第一個字串接在第二個後面（ happyjoy ）,C,Strings
+下列何者屬於滑鼠事件？,onmousescroller,onclick,onmousemove,onmouseover,以上皆不屬於滑鼠事件,A,Events
+下列選項何者不會導致變數失效（生命週期結束）？,超出變數宣告的區塊,宣告相同名字的變數,呼叫函式,程式執行結束,以上皆不會導致變數失效,C,Others
+下列何者不是視窗物件擁有的屬性？,document,curtain,menu,navigator,history,B,Others
+下列哪一個指令可以讓 function 回傳數值？,return,cancel,continue,valueOf,purge,A,Function
+下列選項何者與 mouseover 功能相反？,onmouseoff,onmouseout,onmouseunder,onnotmoseover,以上皆非,B,Events
+下列呼叫函式的方法何者不正確？,var x = myfunc();,myfunc;,x = myfunc();,myfunc();,以上皆正確,B,Function
+下列程式何者會被執行？,// var a = 0; // var b = 0;,/* var a = 0 ; // var b = 0; * /,/* var a = 0; */ var b = 0;,// var a  = 0; /* var b = 0; * /,/* var a = 0; */ /* var b = 0; */,C,Syntax
+哪一個HTML標籤可以使網頁加入JavaScript？,<javascript>,<program>,<script>,<js>,<JavaScript>,C,Syntax
+下列哪一個選項可以使你在瀏覽器上檢查程式？,General,F12,Programs,Advanced,Debug,B,Others
+下列敘述何者正確？,參數就是引數,參數和引數必須同名,參數會是保留字,參數跟引數不一樣,以上敘述皆不正確,A,Function
+"JavaScript程式 ：
+a = new Array();
+b = new Array();
+a[1] = 3;
+b[2] = 5;
+a = b; 
+求a[1]、a[2]的值是多少？",a[1] = 3 ，a[2] = 5,a[1] 未定義 ，a[2] = 5,a[1] 、a[2] 皆未定義 ,這個程式會導致錯誤,a[1] = 3 ，a[2] 未定義,B,Arrays
+"執行 JavaScript 程式：
+a = ( new Array(10)).toString() 
+變數a的值為何？","字串""10""",一個存10格空字元的陣列,"字串""，，，，，，，，""",0，0，0，0，0，0，0，0，0，0,這個程式會導致錯誤,C,Arrays
+"執行下方程式：
+function myAdder(arr)
+{ arr[1]++; arr=arr + arr }
+a = new Array(1, 3, 2, 5 );
+MyAdder(a);
+程式執行完畢後，ａ的值為何？",１，３，２，５,１，４，２，５,１，４，２，５，１，４，２，５,"字串""１，４，２，５，１，４，２，５""",以上皆非,B,Arrays
+下列哪一段程式有使用到陣列？,k = a(i);,k = a[i],k = a >> I,k = a ^ I,以上皆未使用陣列,B,Arrays
+"下方程式：
+（第１行）a = new Array();
+（第２行）a[0] = 12;
+（第３行）a[1] = false;
+（第４行）a[2] = 'text';
+（第５行）a[3] = a;
+哪一行會導致錯誤？",第３行,第２行,第４行,第５行,這段程式完全正確,Ｄ,Arrays
+"下方程式：
+a = new Array(1, 2, 3);
+for ( i in a) 
+alert( 'a[i]='+a[i]);
+警告提示訊息（alert box）會出現幾次？",３次（一個事件出現一次）,４次（一個事件出現１次，外加列出陣列a的length屬性）,3或4次，看哪一種瀏覽器,這個迴圈將出現錯誤,以上皆非,C,Arrays
+JavaScript程式，下列宣告陣列的方法何者正確？,var a = new Array(100),var a = new Array[100],var[] a = new String[100],a = new Array[100],String a  = new String[100],A,Arrays
+"下方程式：
+<script type='text/javascript'>
+A = 8 + “8”;
+document.write(a);
+</script>
+執行完畢後會輸出什麼結果？",16,編譯失敗，無法執行,88,,"字串?８＋""８"" ?",C,Variables
+"下方程式：
+<script type=”text/javascript”>
+var a = “GamesofKGone”;
+var x = a.lastIndexOf(“G”);
+<script>
+執行完畢後會輸出什麼結果？",2,8,9,0,Error,B,Others
+"下方程式：
+<script type=”text/javascript” language=”javascript”>
+a = “demoOfHo”;
+result = a.substring(4,5);
+document.write(result);
+<script>
+執行完畢後會輸出什麼結果？",OF,oO,o,O,F,Ｄ,Strings
+"下方程式：
+<script type=”text/javascript” language=”javascript”>
+var x = 5;
+var y = 6;
+var res = eval('x*y');
+document.write(res);
+<script>
+執行完畢後會輸出什麼結果？",字串“30“,30,5*6,"字串 ""5*6""",x*y,B,Others
+"下方程式：
+document.write(typeof(24.49));</script>
+執行完畢後會輸出什麼？",float,number,integer,double,String,B,Variables
+"下列印出字串""Hello""的方法何者正確？","document.write(""Hello"".len);","document.write(""sizeof(Hello""));","document.write(""Hello"".length));","document.write(lenof(""Hello""));",以上方法皆不正確,C,Strings
+想要移除字串開頭與結尾的空白應使用下列哪一個方法？,strip(),cWhile(),stripped(),trimmed(),trim(),C,Strings
+在JavaScript中沒有將資料型態細分，例如：整數、小數的區別。請問用下列哪一個 function 可以得知一個數字是不是整數？,Integer(value),ifInteger(value),ifinteger(value),int(value),isInteger(value),C,Data Types
+"下方程式：
+<script>
+let geek = ""Demo"";
+document.write( typeof geek ); 
+Geek = 1;
+document.write(typeof geek );
+</script>
+執行完畢後會輸出什麼結果？","string
+Number","string
+String","null
+Null","undefined
+Undefined","demo
+Demo",A,Data Types
+下列選項何者為使用JavaScript的好處？,增加互動性,減少與伺服器互動,即時性的回饋使用者,以上皆是,以上皆非,B,Others
+下列選項何者最適合填入空格?　JavaScript is a _?_ Side Scripting Language.,Server,ISP,Browser,Device,以上選項皆不合適,C,Others
+"下方程式：
+<script>
+function geek() {
+    if ( true ) { 
+      var a = 5;
+    }
+    document.write(a);
+}
+Geek();
+</script>
+執行完畢後會輸出什麼結果？",Compilation Error,沒有任何輸出,5,Runtime Error,a,C,Condition
+"下方程式：
+<script type=”text/javascript”>
+<!--document.write('Hello');
+//-->
+</script>
+執行完畢後會輸出什麼結果？",沒有任何輸出,Compilation Error,Hello,<!--document.write('Hello');//->,Runtime Error,C ,Syntax
+下列哪一個瀏覽器最早支援JavaScript？,Mozilla Firefox,Safari,Internet Explorer,Google Chrome,Netscape,C,Others
+"下方程式：
+ var foo = function foo() {
+　console.log(foo === foo );
+};
+.foo();
+執行完畢後會輸出什麼結果？",TRUE,FALSE,ReferenceError,Compile time error,Runtime Error,A,Condition
+"以下程式：
+function aaa() {
+　return {
+　　Test: 1 
+　};
+}
+alert(typeof aaa() );
+執行完畢後會跳出(alert box)什麼結果？",function,member,object,undefined,以上皆非
+若將以下程式作為條件式：Number('1') - 1 == 0;　條件產生的結果為何？ ,TRUE,FALSE,ReferenceError,Compile time error,Runtime error,A,Condition
+若將以下程式作為條件式：( true + false ) > 2 + true;　條件產生的結果為何？ ,TRUE,FALSE,TypeError,NAN,以上皆非,B,Condition
+"function bar() {
+　return foo;
+　foo = 10;
+　function foo(){}
+　var foo = '11';
+}
+alert( typeof bar());
+執行完畢後會跳出(alert box)什麼結果？",number,function,undefined,string,Error,B,Data Types
+1' - - '1';　這段程式產生的結果為何？,0,2,11,"字串""11""",以上皆非,B,Others
+"下方程式：
+var myArr = ['foo', 'bar', 'baz'];
+myArr.length = 0;
+myArr.push('bin');
+console.log(myArr);
+執行完畢後會輸出什麼結果？","[""foo"", ""bar"", ""baz""]","[""foo"", ""bar"", ""baz"", ""bin""]","[""bin"", ""foo"", ""bar"", ""baz""]","""bin""",以上皆非,B,Arrays
+"若將以下程式作為條件式：string("Hello") === ""Hello""　條件產生的結果為何？ ",TRUE,FALSE,TypeError,以上皆非,ReferenceError,E,Condition
+"若將以下程式作為條件式：""This is a string"" instanceof String;　條件產生的結果為何？ ",TRUE,FALSE,TypeError,以上皆非,ReferenceError,B,Condition
+"下方程式：
+var myArr = [""foo"", ""bar"", ""baz""];
+myArr[2];
+console.log(""2"" in myArr);
+執行完畢後會輸出什麼結果？",TRUE,FALSE,ReferenceError,SyntaxError,baz,A,Arrays
+"arr[0] = ""a"";
+arr[1] = ""b"";
+alert(arr.length);
+執行完畢後會跳出(alert box)什麼結果？",1,2,3,undefined,Runtime Error,B,Arrays
+若將以下程式作為條件式：10 > 9 > 8 === true;　條件產生的結果為何？ ,TRUE,FALSE,ReferenceError,SyntaxError,以上皆非,B,Condition
+"function foo(a, b) {
+　arguments[1] = 2;
+　alert(b);
+}
+.foo(1);
+執行完畢後會跳出(alert box)什麼結果？",2,undefined,ReferenceError,1,以上皆非,B,Function
