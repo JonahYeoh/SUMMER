@@ -4,25 +4,22 @@
 var contactValue = () => {
     return document.getElementById("telecomContact").value;
 }
+
 function patientPost() {
     var status = true;
-    var text =
-    {
+    var text = {
         "resourceType": "Patient",
         "id": "ax98234",
         "text": {
             "status": "generated"
         },
-        "identifier": [
-            {
+        "identifier": [{
                 "use": "usual",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                            "code": "MR"
-                        }
-                    ]
+                    "coding": [{
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "MR"
+                    }]
                 },
                 "assigner": {
                     "display": "Health Care for Christ"
@@ -33,12 +30,10 @@ function patientPost() {
                 "use": "official",
                 "type": {
                     "text": "random",
-                    "coding": [
-                        {
-                            "system": "https://www.ris.gov.tw/app/en/3051",
-                            "code": "PPN"
-                        }
-                    ]
+                    "coding": [{
+                        "system": "https://www.ris.gov.tw/app/en/3051",
+                        "code": "PPN"
+                    }]
                 },
                 "assigner": {
                     "display": "Department Of Household Registration"
@@ -49,12 +44,10 @@ function patientPost() {
             {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                            "code": "NIIP"
-                        }
-                    ]
+                    "coding": [{
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "NIIP"
+                    }]
                 },
                 "assigner": {
                     "display": "Ministry Of Health Taiwan"
@@ -64,8 +57,7 @@ function patientPost() {
             }
         ],
         "active": "true",
-        "name": [
-            {
+        "name": [{
                 "use": "official",
                 "family": "",
                 "given": [
@@ -91,8 +83,7 @@ function patientPost() {
                 "text": ""
             }
         ],
-        "telecom": [
-            {
+        "telecom": [{
                 "system": "phone",
                 "value": "",
                 "use": "mobile"
@@ -110,65 +101,51 @@ function patientPost() {
         ],
         "gender": "male",
         "maritalStatus": {
-            "coding": [
-                {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
-                    "code": "M"
-                }
-            ]
+            "coding": [{
+                "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+                "code": "M"
+            }]
         },
-        "contact": [
-            {
-                "relationship": "N",
-                "name": [
-                    {
-                        "use": "official",
-                        "family": "",
-                        "given": [
-                            ""
-                        ],
-                        "text": ""
-                    }
+        "contact": [{
+            "relationship": "N",
+            "name": [{
+                "use": "official",
+                "family": "",
+                "given": [
+                    ""
                 ],
-                "telecom": [
-                    {
-                        "system": "phone",
-                        "value": ""
-                    }
-                ],
-                "gender": "male"
-            }
-        ],
-        "communication": [
-            {
+                "text": ""
+            }],
+            "telecom": [{
+                "system": "phone",
+                "value": ""
+            }],
+            "gender": "male"
+        }],
+        "communication": [{
                 "language": {
-                    "coding": [
-                        {
-                            "system": "urn:ietf:bcp:47",
-                            "code": "zh-TW",
-                            "display": "Chinese (Taiwan)"
-                        }
-                    ]
+                    "coding": [{
+                        "system": "urn:ietf:bcp:47",
+                        "code": "zh-TW",
+                        "display": "Chinese (Taiwan)"
+                    }]
                 },
                 "preferred": false
             },
             {
                 "language": {
-                    "coding": [
-                        {
-                            "system": "urn:ietf:bcp:47",
-                            "code": "",
-                            "display": ""
-                        }
-                    ]
+                    "coding": [{
+                        "system": "urn:ietf:bcp:47",
+                        "code": "",
+                        "display": ""
+                    }]
                 },
                 "preferred": false
             }
         ],
         "birthDate": "1974-12-25",
         "deceasedBoolean": "false",
-        "address": [
-            {
+        "address": [{
                 "use": "home",
                 "text": "demo",
                 "line": [
@@ -187,26 +164,20 @@ function patientPost() {
                 "postalCode": "demo"
             }
         ],
-        "extension": [
-            {
-                "url": "http://hl7.org/fhir/registry",
-                "extension": [
-                    {
-                        "url": "http://terminology.hl7.org/CodeSystem/v3-Race",
-                        "valueCodeableConcept": {
-                            "coding": [
-                                {
-                                    "system": "http://terminology.hl7.org/CodeSystem/v3-Race",
-                                    "code": "1002-5"
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        ],
+        "extension": [{
+            "url": "http://hl7.org/fhir/registry",
+            "extension": [{
+                "url": "http://terminology.hl7.org/CodeSystem/v3-Race",
+                "valueCodeableConcept": {
+                    "coding": [{
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-Race",
+                        "code": "1002-5"
+                    }]
+                }
+            }]
+        }],
         "managingOrganization": {
-            "reference": "Organization/5053"
+            "reference": "Organization/5000"
         }
     }
 
@@ -220,8 +191,7 @@ function patientPost() {
     if ((text.name[0].given[0] = document.getElementById("given").value) != '') {
         text.name[0].prefix = document.getElementById("title").value;
         text.name[0].given[0] = document.getElementById("given").value;
-    }
-    else
+    } else
         return 0;
 
     text.name[1].given[0] = document.getElementById("givenTaiwan").value;
@@ -236,7 +206,7 @@ function patientPost() {
     text.telecom[2].value = document.getElementById("telecom2").value;
 
     text.gender = gender();
-    
+
     text.maritalStatus.coding[0].code = document.getElementById("marital").value;
 
     if (document.getElementById("lang0y").checked)
@@ -251,8 +221,7 @@ function patientPost() {
         text.contact[0].name[0].given[0] = document.getElementById("givenContact").value;
         text.contact[0].telecom[0].value = document.getElementById("telecomContact").value;
         text.contact[0].gender = document.getElementById("genderContact").value;
-    }
-    else {
+    } else {
         text.contact[0] = "";
         status = false;
     }
@@ -271,8 +240,7 @@ function patientPost() {
         k = document.getElementById("addPostal").value;
         l = document.getElementById("addCountry").value;
         text.address[0].text = i + ", " + j + ", " + k + ", " + l;
-    }
-    else {
+    } else {
         alert("Field missing");
         status = false;
     }
@@ -286,18 +254,16 @@ function patientPost() {
         k = document.getElementById("addPostalW").value;
         l = document.getElementById("addCountryW").value;
         text.address[1].text = i + ", " + j + ", " + k + ", " + l;
-    }
-    else
+    } else
         text.address[1] = "";
 
     text.extension[0].extension[0].valueCodeableConcept.coding[0].code = document.getElementById("raceList").value;
-    
+
     if (status == true) {
         var myJSON = JSON.stringify(text);
         var url = "http://192.168.174.128:8080/hapi-fhir-jpaserver-example/baseDstu3/Patient/" + text.id;
         HTTPPutData(url, myJSON, "patient");
-    }
-    else
+    } else
         alert("Operation Failed");
 
 }
