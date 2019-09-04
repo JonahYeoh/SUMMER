@@ -1,23 +1,19 @@
 ﻿function practitionerRole() {
     var text = {
         "resourceType": "PractitionerRole",
-        "id":"",
+        "id": "",
         "practitioner": {
             "reference": "Practitioner/1948445"
         },
         "organization": {
-            "reference": "Organization/1945183"
+            "reference": "Organization/jonah"
         },
-        "code": [
-          {
-              "coding": [
-                {
-                    "system": "http://hl7.org/fhir/practitioner-role",
-                    "code": "nurse"
-                }
-              ]
-          }
-        ]
+        "code": [{
+            "coding": [{
+                "system": "http://hl7.org/fhir/practitioner-role",
+                "code": "nurse"
+            }]
+        }]
     }
     practitionerId = document.getElementById("pid").value;
     text.practitioner.reference = "Practitioner/" + practitionerId;

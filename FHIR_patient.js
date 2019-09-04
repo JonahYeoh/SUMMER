@@ -177,7 +177,7 @@ function patientPost() {
             }]
         }],
         "managingOrganization": {
-            "reference": "Organization/5000"
+            "reference": "Organization/jonah"
         }
     }
 
@@ -261,7 +261,8 @@ function patientPost() {
 
     if (status == true) {
         var myJSON = JSON.stringify(text);
-        var url = "http://192.168.174.128:8080/hapi-fhir-jpaserver-example/baseDstu3/Patient/" + text.id;
+        //var url = "http://192.168.174.128:8080/hapi-fhir-jpaserver-example/baseDstu3/Patient/" + text.id;
+        var url = "http://hapi.fhir.org/baseDstu3/Patient/" + text.id;
         HTTPPutData(url, myJSON, "patient");
     } else
         alert("Operation Failed");
