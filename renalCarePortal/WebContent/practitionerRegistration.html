@@ -1,5 +1,4 @@
 <html>
-
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title> + Practitioner Registration Portal </title>
@@ -10,8 +9,40 @@
 	<script src="./CAT/practitionerRegistration.js"></script>
 	<script src="./UTILITY/utility.js"></script>
 	<script src="./UTILITY/uiHandler.js"></script>
+	<script>
+		function postVerification(ret, option) {
+			var text = JSON.parse(ret);
+			var id = text.id;
+			if (option == "patient")
+				setCookie("patientId", id, 1);
+			else if (option == "practitioner")
+				setCookie("practitionerId", id, 1);
+			else if (option == "practitionerRole")
+				;
+
+		}
+
+		function getVerification(ret, option) {
+			var text = JSON.parse(ret);
+			alert("text.total = " + text.total);
+			alert("text.id = " + text.id);
+			if (text.total == 0) {
+				alert("Operation Failed");
+			}
+			else if (text.total == 1) {
+				var id = text.entry[0].resource.id;
+				alert("successed" + id);
+				if (option == "practitioner")
+					setCookie("practitionerId", id, 1);
+				else if (option == "patient")
+					setCookie("patientId", id, 1);
+				alert("Success Operation");
+			}
+			alert("Done");
+		}
+	</script>
 </head>
-<body>
+<body  onload="loadArray('monthDOB');loadArray('dayDOB');">
 	<nav>
         <div id="sidebar">
             <div class="toggle-btn" onclick="toggleSidebar()">
@@ -69,22 +100,22 @@
 							<td class="column2"><input type="text" id="given" name="username" /></td>
 						</tr>
 						<tr>
-							<td class="column0">??????:</td>
+							<td class="column0">姓名（繁體）:</td>
 							<td class="hgap"></td>
 							<td class="column2"><input type="text" id="givenTaiwan" name="username" /></td>
 						</tr>
 						<tr>
-							<td class="column0">??????:</td>
+							<td class="column0">姓名（簡體）:</td>
 							<td class="hgap"></td>
 							<td class="column2"><input type="text" id="givenSimplified" name="username" /></td>
 						</tr>
 						<tr>
-							<td class="column0">National Identity Number/????:</td>
+							<td class="column0">National Identity Number/身份證號:</td>
 							<td class="hgap"></td>
 							<td class="column2"><input type="text" id="nid" name="userIdentifier" /></td>
 						</tr>
 						<tr>
-							<td class="column0">Welfare Identity Number/????:</td>
+							<td class="column0">Welfare Identity Number/健保證號:</td>
 							<td class="hgap"></td>
 							<td class="column2"><input type="text" id="wid" name="userIdentifier" /></td>
 						</tr>
@@ -142,11 +173,11 @@
 						</tr>
 					</table>
 					<div class="vgap">
-						<h2>Language/????</h2>
+						<h2>Language/溝通語言</h2>
 					</div>
 					<table>
 						<tr>
-							<td class="column0">????:</td>
+							<td class="column0">臺灣華語:</td>
 							<td class="hgap"></td>
 							<td class="column2">
 								<input type="radio" id="lang0y" name="userCommunication0" value="yes" />Yes
@@ -155,73 +186,73 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="column0">????:</td>
+							<td class="column0">其他語言:</td>
 							<td class="hgap"></td>
 							<td class="column2">
 								<select id="communicationLanguage">
 									<option id="lang0" name="lang" value="----">----</option>
 									<option id="lang1" name="lang" value="ar">Arabic</option>
-									<option id="lang2" name="lang" value="bn">????</option>
-									<option id="lang3" name="lang" value="cs">???</option>
-									<option id="lang4" name="lang" value="da">???</option>
-									<option id="lang5" name="lang" value="de">??</option>
-									<option id="lang6" name="lang" value="de-AT">?? ?????</option>
-									<option id="lang7" name="lang" value="de-CH">?? ????</option>
-									<option id="lang8" name="lang" value="de-DE">?? ????</option>
-									<option id="lang9" name="lang" value="el">???</option>
-									<option id="lang10" name="lang" value="en">??</option>
-									<option id="lang11" name="lang" value="en-AU">?? ??????</option>
-									<option id="lang12" name="lang" value="en-CA">?? ?????</option>
-									<option id="lang13" name="lang" value="en-GB">?? ????</option>
-									<option id="lang14" name="lang" value="en-IN">?? ????</option>
-									<option id="lang15" name="lang" value="en-NZ">?? ?????</option>
-									<option id="lang16" name="lang" value="en-SG">?? ?????</option>
-									<option id="lang17" name="lang" value="en-US">?? ????</option>
-									<option id="lang18" name="lang" value="es">????</option>
-									<option id="lang19" name="lang" value="es-AR">???? ?????</option>
-									<option id="lang20" name="lang" value="es-ES">???? ?????</option>
-									<option id="lang21" name="lang" value="es-UY">???? ?????</option>
-									<option id="lang22" name="lang" value="fi">???</option>
-									<option id="lang23" name="lang" value="fr">??</option>
+									<option id="lang2" name="lang" value="bn">孟加拉语</option>
+									<option id="lang3" name="lang" value="cs">捷克语</option>
+									<option id="lang4" name="lang" value="da">丹麦语</option>
+									<option id="lang5" name="lang" value="de">德语</option>
+									<option id="lang6" name="lang" value="de-AT">德语 （奥地利）</option>
+									<option id="lang7" name="lang" value="de-CH">德语 （瑞士）</option>
+									<option id="lang8" name="lang" value="de-DE">德语 （德国）</option>
+									<option id="lang9" name="lang" value="el">希腊语</option>
+									<option id="lang10" name="lang" value="en">英语</option>
+									<option id="lang11" name="lang" value="en-AU">英语 （澳大利亚）</option>
+									<option id="lang12" name="lang" value="en-CA">英语 （加拿大）</option>
+									<option id="lang13" name="lang" value="en-GB">英语 （英国）</option>
+									<option id="lang14" name="lang" value="en-IN">英语 （印度）</option>
+									<option id="lang15" name="lang" value="en-NZ">英语 （新西兰）</option>
+									<option id="lang16" name="lang" value="en-SG">英语 （新加坡）</option>
+									<option id="lang17" name="lang" value="en-US">英语 （美国）</option>
+									<option id="lang18" name="lang" value="es">西班牙语</option>
+									<option id="lang19" name="lang" value="es-AR">西班牙语 （阿根廷）</option>
+									<option id="lang20" name="lang" value="es-ES">西班牙语 （西班牙）</option>
+									<option id="lang21" name="lang" value="es-UY">西班牙语 （乌拉圭）</option>
+									<option id="lang22" name="lang" value="fi">芬兰语</option>
+									<option id="lang23" name="lang" value="fr">法语</option>
 									<option id="lang24" name="lang" value="fr-BE">French(Belgium)</option>
-									<option id="lang25" name="lang" value="fr-CH">?? ?????</option>
-									<option id="lang26" name="lang" value="fr-FR">?? ????</option>
-									<option id="lang27" name="lang" value="fy">?????</option>
-									<option id="lang28" name="lang" value="fy-NL">?????????</option>
+									<option id="lang25" name="lang" value="fr-CH">法语 （比利时）</option>
+									<option id="lang26" name="lang" value="fr-FR">法语 （瑞士）</option>
+									<option id="lang27" name="lang" value="fy">弗里士兰语</option>
+									<option id="lang28" name="lang" value="fy-NL">弗里士兰语（荷兰）</option>
 									<option id="lang29" name="lang" value="hi">Hindi</option>
-									<option id="lang30" name="lang" value="hr">?????</option>
-									<option id="lang31" name="lang" value="it">????</option>
-									<option id="lang32" name="lang" value="it-CH">???? ????</option>
-									<option id="lang33" name="lang" value="it-IT">???? ?????</option>
-									<option id="lang34" name="lang" value="ja">??</option>
-									<option id="lang35" name="lang" value="ko">???</option>
-									<option id="lang36" name="lang" value="nl">???</option>
-									<option id="lang37" name="lang" value="nl-BE">??? ?????</option>
-									<option id="lang38" name="lang" value="nl-NL">??? ????</option>
-									<option id="lang39" name="lang" value="no">???</option>
-									<option id="lang40" name="lang" value="no-NO">??? ????</option>
+									<option id="lang30" name="lang" value="hr">克罗地亚语</option>
+									<option id="lang31" name="lang" value="it">意大利语</option>
+									<option id="lang32" name="lang" value="it-CH">意大利语 （瑞士）</option>
+									<option id="lang33" name="lang" value="it-IT">意大利语 （意大利）</option>
+									<option id="lang34" name="lang" value="ja">日语</option>
+									<option id="lang35" name="lang" value="ko">朝鲜语</option>
+									<option id="lang36" name="lang" value="nl">荷兰语</option>
+									<option id="lang37" name="lang" value="nl-BE">荷兰语 （比利时）</option>
+									<option id="lang38" name="lang" value="nl-NL">荷兰语 （荷兰）</option>
+									<option id="lang39" name="lang" value="no">挪威语</option>
+									<option id="lang40" name="lang" value="no-NO">挪威语 （挪威）</option>
 									<option id="lang41" name="lang" value="pa">Punjabi</option>
-									<option id="lang42" name="lang" value="pt">????</option>
-									<option id="lang43" name="lang" value="pt-BR">???? ????</option>
-									<option id="lang44" name="lang" value="ru">??</option>
-									<option id="lang45" name="lang" value="ru-RU">?? ?????</option>
-									<option id="lang46" name="lang" value="sr">?????</option>
-									<option id="lang47" name="lang" value="sr-RS">????? ??????</option>
-									<option id="lang48" name="lang" value="sv">???</option>
-									<option id="lang49" name="lang" value="sv-SE">??? ????</option>
-									<option id="lang50" name="lang" value="te">????</option>
-									<option id="lang51" name="lang" value="zh">??</option>
-									<option id="lang52" name="lang" value="zh-CN">?? ????</option>
-									<option id="lang53" name="lang" value="zh-HK">?? ?????????</option>
-									<option id="lang54" name="lang" value="zh-SG">?? ?????</option>
-									<option id="lang55" name="lang" value="zh-TW">?? ????</option>
+									<option id="lang42" name="lang" value="pt">葡萄牙语</option>
+									<option id="lang43" name="lang" value="pt-BR">葡萄牙语 （巴西）</option>
+									<option id="lang44" name="lang" value="ru">俄语</option>
+									<option id="lang45" name="lang" value="ru-RU">俄语 （俄罗斯）</option>
+									<option id="lang46" name="lang" value="sr">塞尔维亚语</option>
+									<option id="lang47" name="lang" value="sr-RS">塞尔维亚语 （塞尔维亚）</option>
+									<option id="lang48" name="lang" value="sv">瑞典语</option>
+									<option id="lang49" name="lang" value="sv-SE">瑞典语 （瑞典）</option>
+									<option id="lang50" name="lang" value="te">泰卢固语</option>
+									<option id="lang51" name="lang" value="zh">中文</option>
+									<option id="lang52" name="lang" value="zh-CN">中文 （中国）</option>
+									<option id="lang53" name="lang" value="zh-HK">中文 （香港特别行政区）</option>
+									<option id="lang54" name="lang" value="zh-SG">中文 （新加坡）</option>
+									<option id="lang55" name="lang" value="zh-TW">中文 （台湾）</option>
 								</select>
 								<hr />
 							</td>
 						</tr>
 					</table>
 					<div class="vgap">
-						<h2>Race/??</h2>
+						<h2>Race/種族</h2>
 					</div>
 					<table>
 						<tr>
@@ -1187,37 +1218,37 @@
 				</td>
 				<td>
 					<div class="vgap">
-						<h2>Personal Contact/??????</h2>
+						<h2>Personal Contact/個人聯絡方式</h2>
 					</div>
 					<table>
 						<tr>
-							<td class="column0">Mobile/??:</td>
+							<td class="column0">Mobile/手機:</td>
 							<td class="hgap"></td>
 							<td class="column2"><input type="text" id="telecom0" name="usercontact"
-                                    placeholder="+886" />
-                            </td>
+									placeholder="+886" />
+							</td>
 						</tr>
 						<tr>
-							<td class="column0">Home/?:</td>
+							<td class="column0">Home/家:</td>
 							<td class="hgap"></td>
 							<td class="column2"><input type="text" id="telecom1" name="usercontact"
-                                    placeholder="homeline" />
-                            </td>
+									placeholder="homeline" />
+							</td>
 						</tr>
 						<tr>
-							<td class="column0">E-Mail/??:</td>
+							<td class="column0">E-Mail/電郵:</td>
 							<td class="hgap"></td>
 							<td class="column2"><input type="text" id="telecom2" name="usercontact"
-                                    placeholder="@anything.com" />
-                            </td>
+									placeholder="@anything.com" />
+							</td>
 						</tr>
 					</table>
 					<div class="vgap">
-						<h2>Contact Person/???</h2>
+						<h2>Contact Person/聯絡人</h2>
 					</div>
 					<table>
 						<tr>
-							<td class="column0">Relationship/??:</td>
+							<td class="column0">Relationship/關係:</td>
 							<td class="hgap"></td>
 							<td class="column2">
 								<select id="contact">
@@ -1232,17 +1263,17 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="column0">Contact Name/????/?/??:</td>
+							<td class="column0">Contact Name/姓名（繁/簡/英）:</td>
 							<td class="hgap"></td>
 							<td class="column2"><input type="text" id="givenContact" name="contactPoint" /></td>
 						</tr>
 						<tr>
-							<td class="column0">Phone Number/????:</td>
+							<td class="column0">Phone Number/電話號碼:</td>
 							<td class="hgap"></td>
 							<td class="column2"><input type="text" id="telecomContact" name="contactPoint" /></td>
 						</tr>
 						<tr>
-							<td class="column0">Gender/??:</td>
+							<td class="column0">Gender/性別:</td>
 							<td class="hgap"></td>
 							<td class="column2">
 								<select id="genderContact">
@@ -1416,7 +1447,7 @@
 						</tr>
 					</table>
 					<div class="vgap">
-						<h2>Home Address/????</h2>
+						<h2>Home Address/居家地址</h2>
 					</div>
 					<table id="addressBox">
 						<tr>
@@ -1427,7 +1458,7 @@
 						</tr>
 					</table>
 					<div class="vgap">
-						<h2>Work Address/????</h2>
+						<h2>Work Address/辦公地址</h2>
 					</div>
 					<table id="addressBoxW">
 						<tr>

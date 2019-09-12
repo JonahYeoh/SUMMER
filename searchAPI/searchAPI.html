@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FHIR SEARCH</title>
+    <script src="utility.js"></script>
+    <script>
+        function my() {
+            document.getElementById("queryQtt").innerHTML = 1;
+        }
+    </script>
+</head>
+
+<body onload="my();">
+    <div class="container">
+        <table id="table1">
+            <tr>
+                <th>
+                    <h4>資源單元 || Resource Type</h4>
+                </th>
+                <td>
+                    <select id="resourceType" onchange="loadParameter();">
+                        <option value="none">----</option>
+                        <option value="Patient">Patient</option>
+                        <option value="Practitioner">Practitioner</option>
+                        <option value="Encounter">Encounter</option>
+                    </select>
+                </td>
+                <th>
+                    查詢條件總數
+                </th>
+                <td id="queryQtt">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    參數 || Search Parameter
+                    <select id="searchParameter" name="parameter">
+
+                    </select>
+                </td>
+                <td>
+                    數字與日期 || Number and Date
+                    <select id="prefix" name="prefix">
+                        <option value="----">----</option>
+                        <option value="eq">equal</option>
+                        <option value="ne">not equal</option>
+                        <option value="gt">greater than</option>
+                        <option value="lt">lower than</option>
+                        <option value="ge">greater than or equal to</option>
+                        <option value="le">lower than or equal to</option>
+                        <option value="sa">start after</option>
+                        <option value="eb">end before</option>
+                        <option value="ap">approximately</option>
+                    </select>
+                </td>
+                <td>
+                    字串 || String
+                    <select id="stringModifier" name="modifiers">
+                        <option value="----">----</option>
+                        <option value=":contains">:contains</option>
+                        <option value=":exact">:exact</option>
+                    </select>
+                </td>
+                <td>
+                    關鍵字 || Search Key
+                    <input type="text" id="inputText" name="val" placeholder="輸入" />
+                </td>
+                <td align="center">
+                    <input type="button" onclick="addRow('table1');" title="暫時支援最多四組條件" value="增加條件" />
+                </td>
+            </tr>
+        </table>
+        <div class="verticalGap">
+
+        </div>
+        <table id="table2">
+            <tr>
+                <td>
+                    <input type="text" id="outputPane" placeholder="完成的結果會出現在此處" title="複製URL字串，貼到瀏覽器的搜尋處" />
+                </td>
+                <td>
+                    <input type="button" onclick="urlGenerator('table1','outputPane');" value="產生鏈接" />
+                    <input type="button" onclick="openURL('outputPane');" value="查看結果" />
+                </td>
+            </tr>
+        </table>
+        <div class="verticalGap">
+
+        </div>
+        <iframe name="frameOne" id="outputFrame" width="1000" height="700">
+        
+        </iframe>
+    </div>
+</body>
+
+</html>

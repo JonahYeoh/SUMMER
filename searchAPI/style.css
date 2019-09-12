@@ -1,0 +1,63 @@
+body {
+    width: 1200px;
+    min-width: 800px;
+    max-height: 750px;
+    padding: 30px;
+    border: 1px solid blue;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    align-content: space-around;
+    border: 1px dotted blue;
+}
+
+#table {
+    width: 800px;
+}
+
+#table1 th {
+    width: 300px;
+    border: 3px dotted blue;
+    background-color: pink;
+}
+
+#table1 td {
+    width: 300px;
+    border: 3px dotted blue;
+    background-color: #FBEFF8;
+}
+
+h4 {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+input[type=text] {
+    width: 300px;
+}
+
+input[type=button] {
+    justify-items: auto;
+    background-color: yellow;
+    color: blue;
+}
+
+select {
+    width: 250px;
+}
+
+.verticalGap {
+    min-height: 20px;
+}
+
+#outputPane {
+    width: 800px;
+}
+
+#outputFrame {
+    min-width: 1000px;
+    height: 300px;
+}
