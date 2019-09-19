@@ -188,7 +188,7 @@ function patientPost() {
             "reference": "Organization/jonah"
         }
     }
-
+	// Organization/jonah
     if ((text.id = document.getElementById("nid").value) == '')
         return 0;
     text.identifier[0].value = "emr" + document.getElementById("nid").value;
