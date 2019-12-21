@@ -1,74 +1,94 @@
-		body{
-			width:100%;
-			height:120%;
-			margin-left:auto;
-			margin-right:auto;
-			margin-top:0;
-			margin-bottom:0;
-			background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8dIWYBQm31U_qoP0RhYdeeriIQacr8Z3FOl_Ny3Sacc6UL77K4w);
-			background-repeat:no-repeat;
-			background-position:center;
-			background-size:cover;
-		}
-		.vgap{
-			width:inherit;
-			height:20px;
-			text-align:center;
-			text-decoration:underline;
-		}
-		.content{
-			width:100%;
-			height:120%;
-			background-color: rgba(63, 170, 231, 0.2);
-			float:right;
-			left:200px;
-			align-items:center;
-		}
-		.left, .right{
-			border:1px solid black;
-			width:45%;
-		}
-		.left{
-			float:left;
-		}
-		.right{
-			float:right;
-		}
-		table{
-			margin-right:auto;
-			margin-left:auto;
-			padding:10px;
-		}
-		.column0{
-			width: 300px;
-			height: 20px;
-			text-align:right;
-		}
-		.hgap{
-			width: 10%;
-			height: 20px;
-		}
-		.column2{
-			width: 50%;
-			height: 20px;
-		}
-		#button0{
-			height: 20px;
-			background-color: rgba(164, 176, 190,1.0);
-		}
-		#hint {
-			text-decoration:none;
-		}
-		input[type="text"] {
-			width: 300px;
-		}
-		input[type="number"]{
-			width:300px;
-		}
-		select{
-			width: 300px;
-		}
-		#addressBox input[type="text"], #addressBoxW input[type="text"]{
-			width:100px;	
+		body {
+		    width: 100%;
+		    height: 120%;
+		    margin-left: auto;
+		    margin-right: auto;
+		    margin-top: 0;
+		    margin-bottom: 0;
+		    background: url(https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpapersdsc.net%2Fwp-content%2Fuploads%2F2016%2F10%2FSky-High-Definition-Wallpapers.jpg&f=1&nofb=1);
+		    background-repeat: no-repeat;
+		    background-position: center;
+		    background-size: cover;
+		    opacity: 0.9;
+		    color: rgba(0, 0, 0, 1);
+		    overflow: hidden;
 		}
 		
+		.vgap {
+		    width: inherit;
+		    height: 20px;
+		    text-align: center;
+		    text-decoration: underline;
+		}
+		
+		.content {
+		    width: 100%;
+		    height: 120%;
+		    background-color: rgba(100, 170, 231, 0.2);
+		    float: right;
+		    left: 200px;
+		    align-items: center;
+		    opacity: 0.8;
+		}
+		
+		.left,
+		.right {
+		    border: 1px solid black;
+		    width: 45%;
+		}
+		
+		.left {
+		    float: left;
+		}
+		
+		.right {
+		    float: right;
+		}
+		
+		table {
+		    margin-right: auto;
+		    margin-left: auto;
+		    padding: 10px;
+		}
+		
+		.column0 {
+		    width: 300px;
+		    height: 20px;
+		    text-align: right;
+		}
+		
+		.hgap {
+		    width: 10%;
+		    height: 20px;
+		}
+		
+		.column2 {
+		    width: 50%;
+		    height: 20px;
+		}
+		
+		#button0 {
+		    height: 20px;
+		    background-color: rgba(164, 176, 190, 1.0);
+		}
+		
+		#hint {
+		    text-decoration: none;
+		}
+		
+		input[type="text"] {
+		    width: 300px;
+		}
+		
+		input[type="number"] {
+		    width: 300px;
+		}
+		
+		select {
+		    width: 300px;
+		}
+		
+		#addressBox input[type="text"],
+		#addressBoxW input[type="text"] {
+		    width: 100px;
+		}

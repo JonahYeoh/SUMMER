@@ -54,7 +54,7 @@ function end_encounter(conditionCode) {
         }
     };
     text.subject.reference = "Patient/" + getCookie("patientId");
-    text.participant[0].individual.reference = "Practitioner/" + getCookie("practitionerId");
+    text.participant[0].individual.reference = "Practitioner/" + document.getElementById("pid").value;
     text.class.code = document.getElementById("encounter_class").value;
     text.reasonCode[0].coding.code = document.getElementById("encounter_reason").value;
     text.location[0].period.start = document.getElementById("start_time").value;
